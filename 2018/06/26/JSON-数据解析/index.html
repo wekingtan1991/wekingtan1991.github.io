@@ -1,27 +1,87 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="CN">
 <head>
-    
-
-    
-
-    
-
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
-    <meta charset="utf-8">
-    
-    
-    
-    
-    <title>JSON 数据解析 | weking 的技术</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="Android,JSON">
-    <meta name="description" content="1.JSONObject 及 JSONArray 取值1.1 String 转 JSONObject 或 JSONArrayJSONArray jsonArray = JSONArray.fromObject(str); JSONObject jsonObject = JSONObject.fromObject(str); 1.2 JSONObject 中获取 JSONArray 或 String">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,JSON," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="weking 的技术" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1.JSONObject 及 JSONArray 取值1.1 String 转 JSONObject 或 JSONArrayJSONArray jsonArray = JSONArray.fromObject(str); JSONObject jsonObject = JSONObject.fromObject(str); 1.2 JSONObject 中获取 JSONArray 或 String">
 <meta name="keywords" content="Android,JSON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSON 数据解析">
@@ -33,160 +93,258 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON 数据解析">
 <meta name="twitter:description" content="1.JSONObject 及 JSONArray 取值1.1 String 转 JSONObject 或 JSONArrayJSONArray jsonArray = JSONArray.fromObject(str); JSONObject jsonObject = JSONObject.fromObject(str); 1.2 JSONObject 中获取 JSONArray 或 String">
-    
-        <link rel="alternate" type="application/atom+xml" title="weking 的技术" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
 
-    <!-- custom head -->
-    
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/26/JSON-数据解析/"/>
+
+
+
+
+
+  <title>JSON 数据解析 | weking 的技术</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="CN">
 
-    <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">wekingtan</h5>
-          <a href="mailto:wekingtan1991@gmail.com" title="wekingtan1991@gmail.com" class="mail">wekingtan1991@gmail.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">weking 的技术</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/wekingtan1991" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">JSON 数据解析</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header post-header">
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-    <div class="container fade-scale">
-        <h1 class="title">JSON 数据解析</h1>
-        <h5 class="subtitle">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-                <time datetime="2018-06-25T18:21:16.000Z" itemprop="datePublished" class="page-time">
-  2018-06-26
-</time>
-
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-        </h5>
-    </div>
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
 
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
 
+  
 
-</header>
+  
+  
+  
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/JSON-数据解析/">
 
-<div class="container body-wrap">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wekingtan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="weking 的技术">
+    </span>
+
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-JSONObject-及-JSONArray-取值"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.JSONObject 及 JSONArray 取值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-String-转-JSONObject-或-JSONArray"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1 String 转 JSONObject 或 JSONArray</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-JSONObject-中获取-JSONArray-或-String"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2 JSONObject 中获取 JSONArray 或 String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-JSONArray-中获取-JSONObject-或-String"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3 JSONArray 中获取 JSONObject 或 String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-例子"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.4 例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-4-1-JSONArray-中获取-JSONObject"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1.4.1 JSONArray 中获取 JSONObject</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-4-2-JSONObject-中获取-JSONArray，然后在从-JSONArray-中获取-JSONObject"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">1.4.2 JSONObject 中获取 JSONArray，然后在从 JSONArray 中获取 JSONObject</span></a></li></ol></li></ol></li></ol>
-        </nav>
-    </aside>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">JSON 数据解析</h1>
+        
 
-<article id="post-JSON-数据解析"
-  class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">JSON 数据解析</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-06-26 02:21:16" datetime="2018-06-25T18:21:16.000Z"  itemprop="datePublished">2018-06-26</time>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-26T02:21:16+08:00">
+                2018-06-26
+              </time>
+            
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="1-JSONObject-及-JSONArray-取值"><a href="#1-JSONObject-及-JSONArray-取值" class="headerlink" title="1.JSONObject 及 JSONArray 取值"></a>1.JSONObject 及 JSONArray 取值</h2><h3 id="1-1-String-转-JSONObject-或-JSONArray"><a href="#1-1-String-转-JSONObject-或-JSONArray" class="headerlink" title="1.1 String 转 JSONObject 或 JSONArray"></a>1.1 String 转 JSONObject 或 JSONArray</h3><pre><code>JSONArray jsonArray = JSONArray.fromObject(str);
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-JSONObject-及-JSONArray-取值"><a href="#1-JSONObject-及-JSONArray-取值" class="headerlink" title="1.JSONObject 及 JSONArray 取值"></a>1.JSONObject 及 JSONArray 取值</h2><h3 id="1-1-String-转-JSONObject-或-JSONArray"><a href="#1-1-String-转-JSONObject-或-JSONArray" class="headerlink" title="1.1 String 转 JSONObject 或 JSONArray"></a>1.1 String 转 JSONObject 或 JSONArray</h3><pre><code>JSONArray jsonArray = JSONArray.fromObject(str);
 JSONObject jsonObject = JSONObject.fromObject(str);
 </code></pre><h3 id="1-2-JSONObject-中获取-JSONArray-或-String"><a href="#1-2-JSONObject-中获取-JSONArray-或-String" class="headerlink" title="1.2 JSONObject 中获取 JSONArray 或 String"></a>1.2 JSONObject 中获取 JSONArray 或 String</h3><pre><code>JSONObject jsonObject = new JSONObject(resource);
 String str = jsonObject.getString(&quot;str&quot;);
@@ -204,236 +362,392 @@ JSONObject jsonObject = jsonArray.getJSONObject(0);
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;HeWeather&quot;: [&#123;&quot;basic&quot;:&#123;&quot;cid&quot;:&quot;CN101300105&quot;,&quot;location&quot;:&quot;隆安&quot;,&quot;parent_city&quot;:&quot;南宁&quot;,&quot;admin_area&quot;:&quot;广西&quot;,&quot;cnty&quot;:&quot;中国&quot;,&quot;lat&quot;:&quot;23.17476273&quot;,&quot;lon&quot;:&quot;107.68865967&quot;,&quot;tz&quot;:&quot;+8.00&quot;,&quot;city&quot;:&quot;隆安&quot;,&quot;id&quot;:&quot;CN101300105&quot;,&quot;update&quot;:&#123;&quot;loc&quot;:&quot;2018-05-02 11:47&quot;,&quot;utc&quot;:&quot;2018-05-02 03:47&quot;&#125;&#125;,&quot;update&quot;:&#123;&quot;loc&quot;:&quot;2018-05-02 11:47&quot;,&quot;utc&quot;:&quot;2018-05-02 03:47&quot;&#125;,&quot;status&quot;:&quot;ok&quot;,&quot;now&quot;:&#123;&quot;cloud&quot;:&quot;25&quot;,&quot;cond_code&quot;:&quot;300&quot;,&quot;cond_txt&quot;:&quot;阵雨&quot;,&quot;fl&quot;:&quot;32&quot;,&quot;hum&quot;:&quot;71&quot;,&quot;pcpn&quot;:&quot;0.0&quot;,&quot;pres&quot;:&quot;1014&quot;,&quot;tmp&quot;:&quot;29&quot;,&quot;vis&quot;:&quot;10&quot;,&quot;wind_deg&quot;:&quot;107&quot;,&quot;wind_dir&quot;:&quot;东南风&quot;,&quot;wind_sc&quot;:&quot;1&quot;,&quot;wind_spd&quot;:&quot;4&quot;,&quot;cond&quot;:&#123;&quot;code&quot;:&quot;300&quot;,&quot;txt&quot;:&quot;阵雨&quot;&#125;&#125;,&quot;daily_forecast&quot;:[&#123;&quot;date&quot;:&quot;2018-05-02&quot;,&quot;cond&quot;:&#123;&quot;txt_d&quot;:&quot;中雨&quot;&#125;,&quot;tmp&quot;:&#123;&quot;max&quot;:&quot;30&quot;,&quot;min&quot;:&quot;23&quot;&#125;&#125;,&#123;&quot;date&quot;:&quot;2018-05-03&quot;,&quot;cond&quot;:&#123;&quot;txt_d&quot;:&quot;阵雨&quot;&#125;,&quot;tmp&quot;:&#123;&quot;max&quot;:&quot;27&quot;,&quot;min&quot;:&quot;22&quot;&#125;&#125;,&#123;&quot;date&quot;:&quot;2018-05-04&quot;,&quot;cond&quot;:&#123;&quot;txt_d&quot;:&quot;阵雨&quot;&#125;,&quot;tmp&quot;:&#123;&quot;max&quot;:&quot;28&quot;,&quot;min&quot;:&quot;23&quot;&#125;&#125;],&quot;hourly&quot;:[&#123;&quot;cloud&quot;:&quot;90&quot;,&quot;cond_code&quot;:&quot;305&quot;,&quot;cond_txt&quot;:&quot;小雨&quot;,&quot;dew&quot;:&quot;26&quot;,&quot;hum&quot;:&quot;83&quot;,&quot;pop&quot;:&quot;58&quot;,&quot;pres&quot;:&quot;1012&quot;,&quot;time&quot;:&quot;2018-05-02 13:00&quot;,&quot;tmp&quot;:&quot;30&quot;,&quot;wind_deg&quot;:&quot;188&quot;,&quot;wind_dir&quot;:&quot;南风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;11&quot;&#125;,&#123;&quot;cloud&quot;:&quot;95&quot;,&quot;cond_code&quot;:&quot;305&quot;,&quot;cond_txt&quot;:&quot;小雨&quot;,&quot;dew&quot;:&quot;24&quot;,&quot;hum&quot;:&quot;85&quot;,&quot;pop&quot;:&quot;49&quot;,&quot;pres&quot;:&quot;1010&quot;,&quot;time&quot;:&quot;2018-05-02 16:00&quot;,&quot;tmp&quot;:&quot;30&quot;,&quot;wind_deg&quot;:&quot;172&quot;,&quot;wind_dir&quot;:&quot;南风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;1&quot;&#125;,&#123;&quot;cloud&quot;:&quot;98&quot;,&quot;cond_code&quot;:&quot;305&quot;,&quot;cond_txt&quot;:&quot;小雨&quot;,&quot;dew&quot;:&quot;24&quot;,&quot;hum&quot;:&quot;87&quot;,&quot;pop&quot;:&quot;25&quot;,&quot;pres&quot;:&quot;1010&quot;,&quot;time&quot;:&quot;2018-05-02 19:00&quot;,&quot;tmp&quot;:&quot;29&quot;,&quot;wind_deg&quot;:&quot;173&quot;,&quot;wind_dir&quot;:&quot;南风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;8&quot;&#125;,&#123;&quot;cloud&quot;:&quot;99&quot;,&quot;cond_code&quot;:&quot;305&quot;,&quot;cond_txt&quot;:&quot;小雨&quot;,&quot;dew&quot;:&quot;23&quot;,&quot;hum&quot;:&quot;89&quot;,&quot;pop&quot;:&quot;20&quot;,&quot;pres&quot;:&quot;1013&quot;,&quot;time&quot;:&quot;2018-05-02 22:00&quot;,&quot;tmp&quot;:&quot;28&quot;,&quot;wind_deg&quot;:&quot;27&quot;,&quot;wind_dir&quot;:&quot;东北风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;9&quot;&#125;,&#123;&quot;cloud&quot;:&quot;99&quot;,&quot;cond_code&quot;:&quot;104&quot;,&quot;cond_txt&quot;:&quot;阴&quot;,&quot;dew&quot;:&quot;22&quot;,&quot;hum&quot;:&quot;90&quot;,&quot;pop&quot;:&quot;71&quot;,&quot;pres&quot;:&quot;1012&quot;,&quot;time&quot;:&quot;2018-05-03 01:00&quot;,&quot;tmp&quot;:&quot;25&quot;,&quot;wind_deg&quot;:&quot;5&quot;,&quot;wind_dir&quot;:&quot;北风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;6&quot;&#125;,&#123;&quot;cloud&quot;:&quot;100&quot;,&quot;cond_code&quot;:&quot;306&quot;,&quot;cond_txt&quot;:&quot;中雨&quot;,&quot;dew&quot;:&quot;22&quot;,&quot;hum&quot;:&quot;93&quot;,&quot;pop&quot;:&quot;49&quot;,&quot;pres&quot;:&quot;1012&quot;,&quot;time&quot;:&quot;2018-05-03 04:00&quot;,&quot;tmp&quot;:&quot;24&quot;,&quot;wind_deg&quot;:&quot;2&quot;,&quot;wind_dir&quot;:&quot;北风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;6&quot;&#125;,&#123;&quot;cloud&quot;:&quot;100&quot;,&quot;cond_code&quot;:&quot;104&quot;,&quot;cond_txt&quot;:&quot;阴&quot;,&quot;dew&quot;:&quot;22&quot;,&quot;hum&quot;:&quot;93&quot;,&quot;pop&quot;:&quot;34&quot;,&quot;pres&quot;:&quot;1013&quot;,&quot;time&quot;:&quot;2018-05-03 07:00&quot;,&quot;tmp&quot;:&quot;23&quot;,&quot;wind_deg&quot;:&quot;11&quot;,&quot;wind_dir&quot;:&quot;北风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;10&quot;&#125;,&#123;&quot;cloud&quot;:&quot;100&quot;,&quot;cond_code&quot;:&quot;305&quot;,&quot;cond_txt&quot;:&quot;小雨&quot;,&quot;dew&quot;:&quot;22&quot;,&quot;hum&quot;:&quot;86&quot;,&quot;pop&quot;:&quot;70&quot;,&quot;pres&quot;:&quot;1015&quot;,&quot;time&quot;:&quot;2018-05-03 10:00&quot;,&quot;tmp&quot;:&quot;23&quot;,&quot;wind_deg&quot;:&quot;3&quot;,&quot;wind_dir&quot;:&quot;北风&quot;,&quot;wind_sc&quot;:&quot;1-2&quot;,&quot;wind_spd&quot;:&quot;2&quot;&#125;],&quot;aqi&quot;:&#123;&quot;city&quot;:&#123;&quot;aqi&quot;:&quot;51&quot;,&quot;pm25&quot;:&quot;29&quot;,&quot;qlty&quot;:&quot;良&quot;&#125;&#125;,&quot;suggestion&quot;:&#123;&quot;comf&quot;:&#123;&quot;type&quot;:&quot;comf&quot;,&quot;brf&quot;:&quot;较舒适&quot;,&quot;txt&quot;:&quot;白天有雨，从而使空气湿度加大，会使人们感觉有点儿闷热，但早晚的天气很凉爽、舒适。&quot;&#125;,&quot;sport&quot;:&#123;&quot;type&quot;:&quot;sport&quot;,&quot;brf&quot;:&quot;较不宜&quot;,&quot;txt&quot;:&quot;有较强降水，建议您选择在室内进行健身休闲运动。&quot;&#125;,&quot;cw&quot;:&#123;&quot;type&quot;:&quot;cw&quot;,&quot;brf&quot;:&quot;不宜&quot;,&quot;txt&quot;:&quot;不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。&quot;&#125;&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 将返回的 JSON 数据解析成 Weather 实体类</span><br><span class="line"> */</span><br><span class="line">public static Weather parseWeatherResponse(String response) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line"></span><br><span class="line">        JSONObject jsonObject = new JSONObject(response);</span><br><span class="line">        JSONArray jsonArray = jsonObject.getJSONArray(&quot;HeWeather&quot;);</span><br><span class="line">        String weatherContent = jsonArray.getJSONObject(0).toString();</span><br><span class="line"></span><br><span class="line">        return new Gson().fromJson(weatherContent, Weather.class);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    Last updated: <time datetime="2018-06-28T02:12:42.195Z" itemprop="dateUpdated">2018-06-28 10:12:42</time>
-</span><br>
-
-
-        
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/06/26/JSON-数据解析/" target="_blank" rel="external">http://yoursite.com/2018/06/26/JSON-数据解析/</a>
-        
+      
     </div>
     
-    <footer>
-        <a href="http://yoursite.com">
-            <img src="/img/avatar.jpg" alt="wekingtan">
-            wekingtan
-        </a>
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/JSON/" rel="tag"># JSON</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
     </footer>
-</blockquote>
-
-        
-
-
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
-
-
-            
-<div class="page-share-wrap">
-    
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/26/JSON-数据解析/&title=《JSON 数据解析》 — weking 的技术&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/26/JSON-数据解析/&title=《JSON 数据解析》 — weking 的技术&source=Android 学习" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/26/JSON-数据解析/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSON 数据解析》 — weking 的技术&url=http://yoursite.com/2018/06/26/JSON-数据解析/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/26/JSON-数据解析/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
 
 
 
         </div>
-    </div>
-
-    
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
         
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    <div class="bottom">
-        <p><span>wekingtan &copy; 2018</span>
-            <span>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wekingtan</p>
+              <p class="site-description motion-element" itemprop="description">Android 学习</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wekingtan1991" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JSONObject-及-JSONArray-取值"><span class="nav-number">1.</span> <span class="nav-text">1.JSONObject 及 JSONArray 取值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-String-转-JSONObject-或-JSONArray"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 String 转 JSONObject 或 JSONArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-JSONObject-中获取-JSONArray-或-String"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 JSONObject 中获取 JSONArray 或 String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-JSONArray-中获取-JSONObject-或-String"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 JSONArray 中获取 JSONObject 或 String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-例子"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-JSONArray-中获取-JSONObject"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1 JSONArray 中获取 JSONObject</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-JSONObject-中获取-JSONArray，然后在从-JSONArray-中获取-JSONObject"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2 JSONObject 中获取 JSONArray，然后在从 JSONArray 中获取 JSONObject</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
-</footer>
+  </aside>
 
+
+        
+      </div>
     </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wekingtan</span>
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/26/JSON-数据解析/&title=《JSON 数据解析》 — weking 的技术&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/26/JSON-数据解析/&title=《JSON 数据解析》 — weking 的技术&source=Android 学习" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/26/JSON-数据解析/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSON 数据解析》 — weking 的技术&url=http://yoursite.com/2018/06/26/JSON-数据解析/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/26/JSON-数据解析/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQZLbMAwEwP3/p52qXBNpZ0B7E5HNk8tyiWweYIDg11c8Xr/Hn5+vnl795v77q9+8bWBgYDyW8bod9wu9mjJfVjJvRMXAwDiAkQfZPLwmS0m27H5tGBgYGPfLvXqaLyvZAgwMDIw24CZJXp4s/rP/DQwMjAcy8mIy2YKVk7GP1+IYGBgPZKw0Bj79+Yf6GxgYGP8x4zUa7cRJAF1aDwYGxtaMpPicLWvWMMiP8OoaGgMD47GM9vAr/yY5IJu1BP7yFAMD4zDGmycoj8zq/woMDIxjGG3zMkfmSWcS9L9JDTEwMDZltCG4vXKRl6yzBicGBgZGe82rXXSOSbYJAwPjBEa76DbIthVoXhJjYGCcw0gKyLy4zd9QF6izriwGBsbDGcllr1lZm1wmm2Eur4VhYGBsx2gBM3C7Ke1WYmBgnMBoj/vbEndWEhfXQTAwMA5gzBoD7VWMlQD9zewYGBgHMJKlFOEvSArbGaODNgwMjE0ZKwE0bwa0ZersPRgYGHsz8mQuSRxnaeVKCMbAwDiHkSyrPYxbTxmLDBADA2NrxrtCcHJgt34trKBiYGBswXiVow2Us8ZDfmUWAwPjBMYsCZtNMAups+3DwMDYj7EeZNt9ml0yK+64YWBgbMpoD+7bkDo7yEsKaQwMDIy2xZindMn7iwu1GBgYGHGDs20etHPV8R4DA2MjRlLEzhqTK+8vMBgYGFsz1hsDbUL5OSQGBsZ2jF/ymSy6u2VfWgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+  
 </div>
 
 
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+  <span class="post-meta-divider">|</span>
 
 
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  
 
 
 
 
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
 
 </body>
 </html>
