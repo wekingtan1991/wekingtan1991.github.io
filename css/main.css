@@ -1764,19 +1764,6 @@ pre .javascript .function {
   font-size: 13px;
   color: #999;
 }
-img:hover {
-/* 鼠标经过停止头像旋转 
- -webkit-animation-play-state:paused; 
- animation-play-state:paused;*/
-/* 鼠标经过头像旋转360度 */
-  -webkit-transform: rotateZ(360deg);
-  -moz-transform: rotateZ(360deg);
-  -webkit-transform: rotateZ(360deg);
-  -moz-transform: rotateZ(360deg);
-  -ms-transform: rotateZ(360deg);
-  -o-transform: rotateZ(360deg);
-  transform: rotateZ(360deg);
-}
 .site-state {
   overflow: hidden;
   line-height: 1.4;
@@ -1845,7 +1832,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0f81;
+  background: #d70062;
 }
 .links-of-blogroll {
   font-size: 13px;
