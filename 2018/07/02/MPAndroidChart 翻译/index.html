@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="weking 的技术">
 <meta property="og:description" content="MPAndroidChart 开始本章介绍使用此库的基本设置。 添加依赖作为第一步，将该库的依赖项添加到您的项目中。 如何添加依赖已经在此存储库的用法部分中进行了介绍。 推荐使用 Gradle 方式作为添加依赖的方式。 创建界面使用 LineChart, BarChart, ScatterChart, CandleStickChart, PieChart, BubbleChart or Radar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-04T16:14:16.792Z">
+<meta property="og:updated_time" content="2018-07-05T01:47:08.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MPAndroidChart 翻译">
 <meta name="twitter:description" content="MPAndroidChart 开始本章介绍使用此库的基本设置。 添加依赖作为第一步，将该库的依赖项添加到您的项目中。 如何添加依赖已经在此存储库的用法部分中进行了介绍。 推荐使用 Gradle 方式作为添加依赖的方式。 创建界面使用 LineChart, BarChart, ScatterChart, CandleStickChart, PieChart, BubbleChart or Radar">
@@ -407,6 +407,29 @@
 <h2 id="手势回调"><a href="#手势回调" class="headerlink" title="手势回调"></a>手势回调</h2><p><code>OnChartGestureListener</code> 将允许您对图表上的手势做出反应：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">public interface OnChartGestureListener &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when a touch-gesture has started on the chart (ACTION_DOWN)</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param lastPerformedGesture</span><br><span class="line">     */</span><br><span class="line">    void onChartGestureStart(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when a touch-gesture has ended on the chart (ACTION_UP, ACTION_CANCEL)</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param lastPerformedGesture</span><br><span class="line">     */</span><br><span class="line">    void onChartGestureEnd(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is longpressed.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartLongPressed(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is double-tapped.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartDoubleTapped(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is single-tapped.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartSingleTapped(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks then a fling gesture is made on the chart.</span><br><span class="line">     *</span><br><span class="line">     * @param me1</span><br><span class="line">     * @param me2</span><br><span class="line">     * @param velocityX</span><br><span class="line">     * @param velocityY</span><br><span class="line">     */</span><br><span class="line">    public void onChartFling(MotionEvent me1, MotionEvent me2, float velocityX, float velocityY);</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">     * Callbacks when the chart is scaled / zoomed via pinch zoom gesture.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param scaleX scalefactor on the x-axis</span><br><span class="line">     * @param scaleY scalefactor on the y-axis</span><br><span class="line">     */</span><br><span class="line">    public void onChartScale(MotionEvent me, float scaleX, float scaleY);</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * Callbacks when the chart is moved / translated via drag gesture.</span><br><span class="line">    *</span><br><span class="line">    * @param me</span><br><span class="line">    * @param dX translation distance on the x-axis</span><br><span class="line">    * @param dY translation distance on the y-axis</span><br><span class="line">    */</span><br><span class="line">    public void onChartTranslate(MotionEvent me, float dX, float dY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只需让你接收回调的类实现这个接口，并将其设置为图表的监听器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chart.setOnChartGestureListener(this);</span><br></pre></td></tr></table></figure></p>
+<h1 id="高亮显示值"><a href="#高亮显示值" class="headerlink" title="高亮显示值"></a>高亮显示值</h1><p>本节重点介绍通过 <code>tap-gesture</code> 和基于发行版 v3.0.0 以编程方式，高亮显示图表中条目的主题。</p>
+<h2 id="启用-禁用高亮显示"><a href="#启用-禁用高亮显示" class="headerlink" title="启用/禁用高亮显示"></a>启用/禁用高亮显示</h2><ul>
+<li><code>setHighlightPerDragEnabled(boolean enabled)</code> 在图表上将此设置为 <code>true</code>，以便在完全缩小时，在图表表面上进行每次<code>拖动</code>时高亮显示。 默认值： <code>true</code></li>
+<li><code>setHighlightPerTapEnabled(boolean enabled)</code> 在图表上将此设置为 <code>false</code>，以防止通过<code>点击手势</code>高亮显示值。 但仍可通过拖动或以编程方式高亮显示值。 默认值： <code>true</code></li>
+<li><code>setMaxHighlightDistance(float distanceDp)</code> 在 <code>dp</code> 中设置最大的高光距离。在图表上轻敲远离条目的距离，不会触发高亮显示。 默认值： <code>500dp</code></li>
+</ul>
+<p>除此之外，还可以为各个 <code>DataSet</code> 对象配置高亮显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dataSet.setHighlightEnabled(true); // allow highlighting for DataSet</span><br><span class="line"></span><br><span class="line"> // set this to false to disable the drawing of highlight indicator (lines)</span><br><span class="line"> dataSet.setDrawHighlightIndicators(true);</span><br><span class="line"> dataSet.setHighlightColor(Color.BLACK); // color for highlight indicator</span><br><span class="line"> // and more...</span><br></pre></td></tr></table></figure></p>
+<h2 id="以编程方式突出显示"><a href="#以编程方式突出显示" class="headerlink" title="以编程方式突出显示"></a>以编程方式突出显示</h2><ul>
+<li><code>highlightValue(float x, int dataSetIndex, boolean callListener)</code> 高亮显示给定 <code>DataSet</code> 中给定 <code>x</code>位置的值。 提供 <code>-1</code> 作为 <code>dataSetIndex</code> 以撤消所有高亮显示。<code>布尔标志</code>确定是否应该调用选择侦听器。</li>
+<li><code>highlightValue(Highlight high, boolean callListener)</code> 高亮显示提供的 <code>Highlight对象</code> 所代表的值。提供 <code>null</code> 以撤消所有高亮显示。<code>布尔标志</code>确定是否应该调用选择侦听器。</li>
+<li><code>highlightValues(Highlight[] highs)</code> 高亮显示给定 <code>Highlight []</code> 数组所表示的值。提供 <code>null</code> 或<code>空数组</code>以撤消所有高亮显示。</li>
+<li><p><code>getHighlighted()</code> 返回 <code>Highlight []</code> 数组，其中包含有关所有高亮显示的条目，<code>x-index</code> 和 <code>dataset-index</code> 的信息。</p>
+<h2 id="选择回调"><a href="#选择回调" class="headerlink" title="选择回调"></a>选择回调</h2><p>该库在交互时为回调提供了许多侦听器。 其中一个是 <code>OnChartValueSelectedListener</code>，用于通过触控高亮显示值时的回调：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> public interface OnChartValueSelectedListener &#123;</span><br><span class="line">    /**</span><br><span class="line">    * Called when a value has been selected inside the chart.</span><br><span class="line">    *</span><br><span class="line">    * @param e The selected Entry.</span><br><span class="line">    * @param h The corresponding highlight object that contains information</span><br><span class="line">    * about the highlighted position</span><br><span class="line">    */</span><br><span class="line">    public void onValueSelected(Entry e, Highlight h);</span><br><span class="line">    /**</span><br><span class="line">    * Called when nothing has been selected or an &quot;un-select&quot; has been made.</span><br><span class="line">    */</span><br><span class="line">    public void onNothingSelected();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>只需让你的接收回调的类，实现这个接口并将其设置为图表的监听器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chart.setOnChartValueSelectedListener(this);</span><br></pre></td></tr></table></figure></p>
+<h2 id="高亮的类"><a href="#高亮的类" class="headerlink" title="高亮的类"></a>高亮的类</h2><p><code>Highlight类</code> 表示与高亮显示的 <code>Entry</code> 关联的所有数据，例如高亮显示的 <code>Entry对象</code> 本身，它所属的 <code>DataSet</code>，它在绘图表面上的位置等等。它可用于获取有关已高亮显示的条目的信息，或用于向图表提供要高亮显示的条目的信息。关于这个目的，<code>Highlight类</code> 提供了两个构造函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/** constructor for standard highlight */</span><br><span class="line">public Highlight(float x, int dataSetIndex) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">/** constructor for stacked BarEntry highlight */</span><br><span class="line">public Highlight(float x, int dataSetIndex, int stackIndex) &#123; ... &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这些构造函数可用于创建 <code>Highlight对象</code>，该对象允许以编程方式执行突出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// highlight the entry and x-position 50 in the first (0) DataSet</span><br><span class="line">Highlight highlight = new Highlight(50f, 0);</span><br><span class="line"></span><br><span class="line">chart.highlightValue(highlight, false); // highlight this value, don&apos;t call listener</span><br></pre></td></tr></table></figure></p>
+<h2 id="自定义高亮"><a href="#自定义高亮" class="headerlink" title="自定义高亮"></a>自定义高亮</h2><p>所有用户输入的高亮手势形式，都由默认的 <code>ChartHighlighter类</code> 在内部处理。使用以下方法，用自定义实现替换默认的 <code>highligher</code>：</p>
+<ul>
+<li><code>setHighlighter（ChartHighlighter highlighter）</code> 为图表设置自定义 <code>highligher对象</code>，以处理在图表视图上执行的所有高亮触摸事件。您自定义的 <code>highlighter对象</code> 需要继承 <code>ChartHighlighter类</code>。</li>
+</ul>
 
       
     </div>
@@ -607,6 +630,62 @@
                     <a href="http://wuxiaolong.me/" title="吴小龙同學" target="_blank">吴小龙同學</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.woshipm.com/" title="人人都是产品经理" target="_blank">人人都是产品经理</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.google.cn/" title="android.google.cn" target="_blank">android.google.cn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lyndonchin.gitbooks.io/kotlin-docs-zh/content/" title="Kotlin 中文文档" target="_blank">Kotlin 中文文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://flutterchina.club/" title="Flutter中文网" target="_blank">Flutter中文网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/" title="廖雪峰的官方网站" target="_blank">廖雪峰的官方网站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.openinstall.io/index.html" title="OPENINSTALL" target="_blank">OPENINSTALL</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jikexueyuan.com/" title="极客学院" target="_blank">极客学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.ted.com/" title="TED" target="_blank">TED</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://android-arsenal.com/" title="Android Arsenal" target="_blank">Android Arsenal</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uibaba.com/" title="UI巴巴" target="_blank">UI巴巴</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://design.1sters.com/material_design/style/color.html#" title="Material Design中文版" target="_blank">Material Design中文版</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -626,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖"><span class="nav-number">1.1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建界面"><span class="nav-number">1.2.</span> <span class="nav-text">创建界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加数据"><span class="nav-number">1.3.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式"><span class="nav-number">1.4.</span> <span class="nav-text">样式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#与图表交互"><span class="nav-number">2.</span> <span class="nav-text">与图表交互</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-禁用交互"><span class="nav-number">2.1.</span> <span class="nav-text">启用/禁用交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表抛物线-减速"><span class="nav-number">2.2.</span> <span class="nav-text">图表抛物线/减速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#突出显示值"><span class="nav-number">2.3.</span> <span class="nav-text">突出显示值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手势回调"><span class="nav-number">2.4.</span> <span class="nav-text">手势回调</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖"><span class="nav-number">1.1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建界面"><span class="nav-number">1.2.</span> <span class="nav-text">创建界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加数据"><span class="nav-number">1.3.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式"><span class="nav-number">1.4.</span> <span class="nav-text">样式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#与图表交互"><span class="nav-number">2.</span> <span class="nav-text">与图表交互</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-禁用交互"><span class="nav-number">2.1.</span> <span class="nav-text">启用/禁用交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表抛物线-减速"><span class="nav-number">2.2.</span> <span class="nav-text">图表抛物线/减速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#突出显示值"><span class="nav-number">2.3.</span> <span class="nav-text">突出显示值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手势回调"><span class="nav-number">2.4.</span> <span class="nav-text">手势回调</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高亮显示值"><span class="nav-number">3.</span> <span class="nav-text">高亮显示值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-禁用高亮显示"><span class="nav-number">3.1.</span> <span class="nav-text">启用/禁用高亮显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以编程方式突出显示"><span class="nav-number">3.2.</span> <span class="nav-text">以编程方式突出显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择回调"><span class="nav-number">3.3.</span> <span class="nav-text">选择回调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高亮的类"><span class="nav-number">3.4.</span> <span class="nav-text">高亮的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义高亮"><span class="nav-number">3.5.</span> <span class="nav-text">自定义高亮</span></a></li></ol></li></ol></div>
             
 
           </div>
