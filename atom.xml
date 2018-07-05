@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-05T02:59:24.522Z</updated>
+  <updated>2018-07-05T05:48:59.578Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,170 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RecyclerView使用</title>
+    <link href="http://yoursite.com/2018/07/05/RecyclerView%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/RecyclerView使用/</id>
+    <published>2018-07-05T05:48:59.000Z</published>
+    <updated>2018-07-05T05:48:59.578Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Fragment使用</title>
+    <link href="http://yoursite.com/2018/07/05/Fragment%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Fragment使用/</id>
+    <published>2018-07-05T05:48:36.000Z</published>
+    <updated>2018-07-05T05:48:36.141Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自定义View</title>
+    <link href="http://yoursite.com/2018/07/05/%E8%87%AA%E5%AE%9A%E4%B9%89View/"/>
+    <id>http://yoursite.com/2018/07/05/自定义View/</id>
+    <published>2018-07-05T05:48:16.000Z</published>
+    <updated>2018-07-05T05:48:16.731Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Intent使用</title>
+    <link href="http://yoursite.com/2018/07/05/Intent%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Intent使用/</id>
+    <published>2018-07-05T05:47:59.000Z</published>
+    <updated>2018-07-05T05:47:59.177Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Service使用</title>
+    <link href="http://yoursite.com/2018/07/05/Service%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Service使用/</id>
+    <published>2018-07-05T05:47:42.000Z</published>
+    <updated>2018-07-05T05:47:42.999Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Broadcast使用</title>
+    <link href="http://yoursite.com/2018/07/05/Broadcast%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Broadcast使用/</id>
+    <published>2018-07-05T05:47:25.000Z</published>
+    <updated>2018-07-05T05:47:25.617Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ViewPager使用</title>
+    <link href="http://yoursite.com/2018/07/05/ViewPager%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/ViewPager使用/</id>
+    <published>2018-07-05T05:47:02.000Z</published>
+    <updated>2018-07-05T05:47:02.958Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java获取当前时间方法</title>
+    <link href="http://yoursite.com/2018/07/05/Java%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/07/05/Java获取当前时间方法/</id>
+    <published>2018-07-05T05:46:33.000Z</published>
+    <updated>2018-07-05T05:46:33.491Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BLE 开发知识</title>
+    <link href="http://yoursite.com/2018/07/05/BLE%20%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/"/>
+    <id>http://yoursite.com/2018/07/05/BLE 开发知识/</id>
+    <published>2018-07-05T05:20:32.000Z</published>
+    <updated>2018-07-05T05:51:46.078Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="BLE" scheme="http://yoursite.com/categories/Android/BLE/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="BLE 4.0" scheme="http://yoursite.com/tags/BLE-4-0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BLE 手环开发总结</title>
+    <link href="http://yoursite.com/2018/07/05/%E6%89%8B%E7%8E%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/07/05/手环开发总结/</id>
+    <published>2018-07-05T03:04:25.000Z</published>
+    <updated>2018-07-05T05:44:53.151Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h1><ul><li>显示步数、距离、卡路里、电量、目标完成状况</li></ul><h1 id="功能实现过程"><a href="#功能实现过程" class="headerlink" title="功能实现过程"></a>功能实现过程</h1><ul><li><p>通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回<code>当前时刻</code>到<code>上一次同步数据时刻</code>的数据（注：数据以1小时为单位，返回的每个1小时数据是<code>每个1小时的累计数据</code>)，这次返回的数据中含有<code>掉电标志字节</code>，用于判断本次数据同步是<code>正常</code>还是<code>掉电后重新上电后的第一次同步</code>。</p></li><li><p>手机 APP 发送请求同步手环屏幕当前显示数据的数据给手环；手环接收数据成功后，返回<code>步数</code>、<code>距离</code>、<code>卡路里</code>、<code>电量</code>的数据。</p></li><li><p>手机 APP 发送请求同步手环72个小时数据的数据给手环；手环接收数据成功后，返回<code>步数</code>、<code>卡路里</code>、<code>每个小时的 UTC 秒数</code>的数据。</p></li></ul><h1 id="开发辅助"><a href="#开发辅助" class="headerlink" title="开发辅助"></a>开发辅助</h1><h2 id="数据库框架"><a href="#数据库框架" class="headerlink" title="数据库框架"></a>数据库框架</h2><p><a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="noopener">greenDAO</a></p><p>简书上面的参考资料：</p><ul><li><a href="https://www.jianshu.com/p/b017ca5fe0ab" target="_blank" rel="noopener">Android Study 之 玩转GreenDao 3.2.2 点滴提升逼格~</a></li></ul><h2 id="数据库调试"><a href="#数据库调试" class="headerlink" title="数据库调试"></a>数据库调试</h2><p><a href="https://github.com/amitshekhariitbhu/Android-Debug-Database" target="_blank" rel="noopener">Android-Debug-Database</a></p><h2 id="智能刷新框架"><a href="#智能刷新框架" class="headerlink" title="智能刷新框架"></a>智能刷新框架</h2><p><a href="https://github.com/scwang90/SmartRefreshLayout" target="_blank" rel="noopener">SmartRefreshLayout</a></p><h2 id="图表显示框架"><a href="#图表显示框架" class="headerlink" title="图表显示框架"></a>图表显示框架</h2><p><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a></p><p>CSDN 上面的两篇参考资料：</p><ul><li><a href="https://blog.csdn.net/ww897532167/article/details/77334345" target="_blank" rel="noopener">Android图表控件MPAndroidChart的简单介绍（MPAndroidChart3.0</a></li><li><a href="https://blog.csdn.net/u014136472/article/details/50273309" target="_blank" rel="noopener">MPAndroidChart 教程</a></li></ul><h2 id="Fragment-切换指示器"><a href="#Fragment-切换指示器" class="headerlink" title="Fragment 切换指示器"></a>Fragment 切换指示器</h2><p><a href="https://github.com/chenupt/SpringIndicator" target="_blank" rel="noopener">SpringIndicator</a></p><h2 id="自定义选择器框架"><a href="#自定义选择器框架" class="headerlink" title="自定义选择器框架"></a>自定义选择器框架</h2><p><a href="https://github.com/gzu-liyujiang/AndroidPicker" target="_blank" rel="noopener">AndroidPicker</a></p><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul><li>BLE 以6.0版本为界限的开发流程、GATT 规范</li><li>Java 获取当前时间以及各种转换</li><li>ViewPager + Fragment 使用</li><li>Activity 和 Fragment 跳转、数据交互</li><li>BottomNavigationView 使用</li><li>Broadcast 使用</li><li>Service 使用</li><li>Intent 使用</li><li>异步使用</li><li>enum</li><li>自定义 View 参考：<a href="https://blog.csdn.net/ccy0122/article/details/53241648" target="_blank" rel="noopener">仿支付宝芝麻信用的仪表盘</a><br><a href="http://www.gcssloop.com/customview/CustomViewIndex/" target="_blank" rel="noopener">安卓自定义View教程</a></li><li>Fragment 的 add、hide、show。简书收藏几篇文章</li><li>由于手环储存的步数数据仅为1个小时的累计，所以当用图表显示月、年的时候，需要对数据进行处理</li><li>实时监控手机的网络、蓝牙状态变化</li><li>蓝牙、定位、位置服务权限申请</li><li>byte[] 数组对应天数开关处理</li><li>Fragment 的接口回调</li><li>自定义一个 NoScrollViewPagerAdapter</li><li>自定义一个 LogUtil</li><li>RecyclerView 使用</li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基础功能&quot;&gt;&lt;a href=&quot;#基础功能&quot; class=&quot;headerlink&quot; title=&quot;基础功能&quot;&gt;&lt;/a&gt;基础功能&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;显示步数、距离、卡路里、电量、目标完成状况&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;功能实现过程&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="BLE 4.0" scheme="http://yoursite.com/tags/BLE-4-0/"/>
+    
+  </entry>
   
   <entry>
     <title>ICON 资源网站</title>
@@ -50,7 +214,7 @@
     <link href="http://yoursite.com/2018/07/02/MPAndroidChart%20%E7%BF%BB%E8%AF%91/"/>
     <id>http://yoursite.com/2018/07/02/MPAndroidChart 翻译/</id>
     <published>2018-07-02T04:39:10.000Z</published>
-    <updated>2018-07-05T01:47:08.110Z</updated>
+    <updated>2018-07-05T05:51:10.725Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a></p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>本章介绍使用此库的基本设置。</p><h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>作为第一步，将该库的依赖项添加到您的项目中。 如何添加依赖已经在此存储库的用法部分中进行了介绍。 推荐使用 Gradle 方式作为添加依赖的方式。</p><h2 id="创建界面"><a href="#创建界面" class="headerlink" title="创建界面"></a>创建界面</h2><p>使用 <code>LineChart</code>, <code>BarChart</code>, <code>ScatterChart</code>, <code>CandleStickChart</code>, <code>PieChart</code>, <code>BubbleChart</code> or <code>RadarChart</code> ，在 .xml 中定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.github.mikephil.charting.charts.LineChart</span><br><span class="line">        android:id=&quot;@+id/chart&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot; /&gt;</span><br></pre></td></tr></table></figure></p><p>然后从 <code>Activity</code>,  <code>Fragment</code> or <code>whatever</code> 中取回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// in this example, a LineChart is initialized from xml</span><br><span class="line">LineChart chart = (LineChart) findViewById(R.id.chart);</span><br></pre></td></tr></table></figure></p><p>或者使用代码来创建（跟着在 layout 添加）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// programmatically create a LineChart</span><br><span class="line">LineChart chart = new LineChart(Context);</span><br><span class="line"></span><br><span class="line">// get a layout defined in xml</span><br><span class="line">RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout);</span><br><span class="line">rl.add(chart); // add the programmatically created chart</span><br></pre></td></tr></table></figure></p><h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><p>在获得图表实例后，你可以创建数据并且添加到图表。这个例子使用的是 LineChart，<code>Entry</code> 类代表图表中一个点的 X，Y 坐标。其他图表类型，例如 BarChart 使用 <code>BarEntry</code>。<br>添加数据到图表，将每一个数据代入到 <code>Entry</code> 中，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">YourData[] dataObjects = ...;</span><br><span class="line"></span><br><span class="line">List&lt;Entry&gt; entries = new ArrayList&lt;Entry&gt;();</span><br><span class="line"></span><br><span class="line">for (YourData data : dataObjects) &#123;</span><br><span class="line"></span><br><span class="line">    // turn your data into Entry objects</span><br><span class="line">    entries.add(new Entry(data.getValueX(), data.getValueY()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>下一步，将 List<entry> 添加到 <code>LineDataSet</code>。DataSet 对象保存数据，同时允许单独设置数据的样式。如果启用，下面使用的“标签”仅具有描述性目的，并显示在图表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LineDataSet dataSet = new LineDataSet(entries, &quot;Label&quot;); // add entries to dataset</span><br><span class="line">dataSet.setColor(...);</span><br><span class="line">dataSet.setValueTextColor(...); // styling, ...</span><br></pre></td></tr></table></figure></entry></p><p>最后一步，添加 LineDataSet 对象到 LineData 对象。这个对象持有 chart 实例的所有数据，并允许有单独样式。在你建立数据对象后，你可以使用它建立图表并刷新：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LineData lineData = new LineData(dataSet);</span><br><span class="line">chart.setData(lineData);</span><br><span class="line">chart.invalidate(); // refresh</span><br></pre></td></tr></table></figure></p><p>请考虑到上面的仅仅是基本应用。需要更详细的扩展应用，请参考 <a href="https://github.com/PhilJay/MPAndroidChart/wiki/Setting-Data" target="_blank" rel="noopener">setting data</a> 部分，其中有很多添加数据到不同 <code>chart</code> 类型图表的例子。</p><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>有关图表外观和数据的设置和样式的信息，请参考 <a href="https://github.com/PhilJay/MPAndroidChart/wiki/General-Chart-Settings-&amp;-Styling" target="_blank" rel="noopener">general settings &amp; styling</a> 部分。关于单个图表类型的更具体的样式和设置，请参考 <a href="https://github.com/PhilJay/MPAndroidChart/wiki/Specific-chart-settings" target="_blank" rel="noopener">specific settings &amp; styling</a>。</p><h1 id="与图表交互"><a href="#与图表交互" class="headerlink" title="与图表交互"></a>与图表交互</h1><p>该库允许您完全自定义与图表视图的可能触摸（和手势）交互，并通过回调方法对交互作出反应。</p><h2 id="启用-禁用交互"><a href="#启用-禁用交互" class="headerlink" title="启用/禁用交互"></a>启用/禁用交互</h2><ul><li><code>setTouchEnabled(boolean enabled)</code> 允许启用/禁用与图表的所有可能的触摸交互。</li><li><code>setDragEnabled(boolean enabled)</code> 启用/禁用图表的拖动（平移）。</li><li><code>setScaleEnabled(boolean enabled)</code> 启用/禁用两个轴上的图表缩放。</li><li><code>setScaleXEnabled(boolean enabled)</code> 启用/禁用 X 轴缩放。</li><li><code>setScaleYEnabled(boolean enabled)</code> 启用/禁用 Y 轴缩放。</li><li><code>setPinchZoom(boolean enabled)</code> 如果设置为 <code>true</code>，则启用缩放。如果禁用，则可以单独缩放 X 轴和 Y 轴。</li><li><code>setDoubleTapToZoomEnabled(boolean enabled)</code> 将此设置为 <code>false</code> 以禁止通过双击来缩放图表。</li></ul><h2 id="图表抛物线-减速"><a href="#图表抛物线-减速" class="headerlink" title="图表抛物线/减速"></a>图表抛物线/减速</h2><ul><li><code>setDragDecelerationEnabled(boolean enabled)</code> 如果设置为 <code>true</code>，则图表会在触摸后继续滚动。 默认值：<code>true</code>。</li><li><code>setDragDecelerationFrictionCoef(float coef)</code> 减速摩擦系数在 <code>[0; 1]</code> 之间，较高的值表示<code>速度将缓慢下降</code>，例如，如果设置为 <code>0</code>，它将立即停止。 <code>1</code> 是无效值，将自动转换为 <code>0.9999</code>。</li></ul><h2 id="突出显示值"><a href="#突出显示值" class="headerlink" title="突出显示值"></a>突出显示值</h2><p>如何允许通过点击手势和编程方式，突出显示条目在 <a href="https://github.com/PhilJay/MPAndroidChart/wiki/Highlighting" target="_blank" rel="noopener">highlightning section</a> 中进行了描述。</p><h2 id="手势回调"><a href="#手势回调" class="headerlink" title="手势回调"></a>手势回调</h2><p><code>OnChartGestureListener</code> 将允许您对图表上的手势做出反应：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">public interface OnChartGestureListener &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when a touch-gesture has started on the chart (ACTION_DOWN)</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param lastPerformedGesture</span><br><span class="line">     */</span><br><span class="line">    void onChartGestureStart(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when a touch-gesture has ended on the chart (ACTION_UP, ACTION_CANCEL)</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param lastPerformedGesture</span><br><span class="line">     */</span><br><span class="line">    void onChartGestureEnd(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is longpressed.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartLongPressed(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is double-tapped.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartDoubleTapped(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks when the chart is single-tapped.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     */</span><br><span class="line">    public void onChartSingleTapped(MotionEvent me);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callbacks then a fling gesture is made on the chart.</span><br><span class="line">     *</span><br><span class="line">     * @param me1</span><br><span class="line">     * @param me2</span><br><span class="line">     * @param velocityX</span><br><span class="line">     * @param velocityY</span><br><span class="line">     */</span><br><span class="line">    public void onChartFling(MotionEvent me1, MotionEvent me2, float velocityX, float velocityY);</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">     * Callbacks when the chart is scaled / zoomed via pinch zoom gesture.</span><br><span class="line">     *</span><br><span class="line">     * @param me</span><br><span class="line">     * @param scaleX scalefactor on the x-axis</span><br><span class="line">     * @param scaleY scalefactor on the y-axis</span><br><span class="line">     */</span><br><span class="line">    public void onChartScale(MotionEvent me, float scaleX, float scaleY);</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * Callbacks when the chart is moved / translated via drag gesture.</span><br><span class="line">    *</span><br><span class="line">    * @param me</span><br><span class="line">    * @param dX translation distance on the x-axis</span><br><span class="line">    * @param dY translation distance on the y-axis</span><br><span class="line">    */</span><br><span class="line">    public void onChartTranslate(MotionEvent me, float dX, float dY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>只需让你接收回调的类实现这个接口，并将其设置为图表的监听器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chart.setOnChartGestureListener(this);</span><br></pre></td></tr></table></figure></p><h1 id="高亮显示值"><a href="#高亮显示值" class="headerlink" title="高亮显示值"></a>高亮显示值</h1><p>本节重点介绍通过 <code>tap-gesture</code> 和基于发行版 v3.0.0 以编程方式，高亮显示图表中条目的主题。</p><h2 id="启用-禁用高亮显示"><a href="#启用-禁用高亮显示" class="headerlink" title="启用/禁用高亮显示"></a>启用/禁用高亮显示</h2><ul><li><code>setHighlightPerDragEnabled(boolean enabled)</code> 在图表上将此设置为 <code>true</code>，以便在完全缩小时，在图表表面上进行每次<code>拖动</code>时高亮显示。 默认值： <code>true</code></li><li><code>setHighlightPerTapEnabled(boolean enabled)</code> 在图表上将此设置为 <code>false</code>，以防止通过<code>点击手势</code>高亮显示值。 但仍可通过拖动或以编程方式高亮显示值。 默认值： <code>true</code></li><li><code>setMaxHighlightDistance(float distanceDp)</code> 在 <code>dp</code> 中设置最大的高光距离。在图表上轻敲远离条目的距离，不会触发高亮显示。 默认值： <code>500dp</code></li></ul><p>除此之外，还可以为各个 <code>DataSet</code> 对象配置高亮显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dataSet.setHighlightEnabled(true); // allow highlighting for DataSet</span><br><span class="line"></span><br><span class="line"> // set this to false to disable the drawing of highlight indicator (lines)</span><br><span class="line"> dataSet.setDrawHighlightIndicators(true);</span><br><span class="line"> dataSet.setHighlightColor(Color.BLACK); // color for highlight indicator</span><br><span class="line"> // and more...</span><br></pre></td></tr></table></figure></p><h2 id="以编程方式突出显示"><a href="#以编程方式突出显示" class="headerlink" title="以编程方式突出显示"></a>以编程方式突出显示</h2><ul><li><code>highlightValue(float x, int dataSetIndex, boolean callListener)</code> 高亮显示给定 <code>DataSet</code> 中给定 <code>x</code>位置的值。 提供 <code>-1</code> 作为 <code>dataSetIndex</code> 以撤消所有高亮显示。<code>布尔标志</code>确定是否应该调用选择侦听器。</li><li><code>highlightValue(Highlight high, boolean callListener)</code> 高亮显示提供的 <code>Highlight对象</code> 所代表的值。提供 <code>null</code> 以撤消所有高亮显示。<code>布尔标志</code>确定是否应该调用选择侦听器。</li><li><code>highlightValues(Highlight[] highs)</code> 高亮显示给定 <code>Highlight []</code> 数组所表示的值。提供 <code>null</code> 或<code>空数组</code>以撤消所有高亮显示。</li><li><p><code>getHighlighted()</code> 返回 <code>Highlight []</code> 数组，其中包含有关所有高亮显示的条目，<code>x-index</code> 和 <code>dataset-index</code> 的信息。</p><h2 id="选择回调"><a href="#选择回调" class="headerlink" title="选择回调"></a>选择回调</h2><p>该库在交互时为回调提供了许多侦听器。 其中一个是 <code>OnChartValueSelectedListener</code>，用于通过触控高亮显示值时的回调：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> public interface OnChartValueSelectedListener &#123;</span><br><span class="line">    /**</span><br><span class="line">    * Called when a value has been selected inside the chart.</span><br><span class="line">    *</span><br><span class="line">    * @param e The selected Entry.</span><br><span class="line">    * @param h The corresponding highlight object that contains information</span><br><span class="line">    * about the highlighted position</span><br><span class="line">    */</span><br><span class="line">    public void onValueSelected(Entry e, Highlight h);</span><br><span class="line">    /**</span><br><span class="line">    * Called when nothing has been selected or an &quot;un-select&quot; has been made.</span><br><span class="line">    */</span><br><span class="line">    public void onNothingSelected();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>只需让你的接收回调的类，实现这个接口并将其设置为图表的监听器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chart.setOnChartValueSelectedListener(this);</span><br></pre></td></tr></table></figure></p><h2 id="高亮的类"><a href="#高亮的类" class="headerlink" title="高亮的类"></a>高亮的类</h2><p><code>Highlight类</code> 表示与高亮显示的 <code>Entry</code> 关联的所有数据，例如高亮显示的 <code>Entry对象</code> 本身，它所属的 <code>DataSet</code>，它在绘图表面上的位置等等。它可用于获取有关已高亮显示的条目的信息，或用于向图表提供要高亮显示的条目的信息。关于这个目的，<code>Highlight类</code> 提供了两个构造函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/** constructor for standard highlight */</span><br><span class="line">public Highlight(float x, int dataSetIndex) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">/** constructor for stacked BarEntry highlight */</span><br><span class="line">public Highlight(float x, int dataSetIndex, int stackIndex) &#123; ... &#125;</span><br></pre></td></tr></table></figure></p><p>这些构造函数可用于创建 <code>Highlight对象</code>，该对象允许以编程方式执行突出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// highlight the entry and x-position 50 in the first (0) DataSet</span><br><span class="line">Highlight highlight = new Highlight(50f, 0);</span><br><span class="line"></span><br><span class="line">chart.highlightValue(highlight, false); // highlight this value, don&apos;t call listener</span><br></pre></td></tr></table></figure></p><h2 id="自定义高亮"><a href="#自定义高亮" class="headerlink" title="自定义高亮"></a>自定义高亮</h2><p>所有用户输入的高亮手势形式，都由默认的 <code>ChartHighlighter类</code> 在内部处理。使用以下方法，用自定义实现替换默认的 <code>highligher</code>：</p><ul><li><code>setHighlighter（ChartHighlighter highlighter）</code> 为图表设置自定义 <code>highligher对象</code>，以处理在图表视图上执行的所有高亮触摸事件。您自定义的 <code>highlighter对象</code> 需要继承 <code>ChartHighlighter类</code>。</li></ul>]]></content>
     
@@ -65,6 +229,8 @@
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="Chart" scheme="http://yoursite.com/categories/Android/Chart/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
