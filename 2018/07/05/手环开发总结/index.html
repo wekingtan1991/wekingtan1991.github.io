@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="weking 的技术">
 <meta property="og:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况  功能实现过程 通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含有掉电标志字节，用于判断本次数据同步是正常还是掉电后重新上电后的第一次同步。  手机 APP 发送请">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T05:44:53.151Z">
+<meta property="og:updated_time" content="2018-07-05T08:21:34.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BLE 手环开发总结">
 <meta name="twitter:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况  功能实现过程 通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含有掉电标志字节，用于判断本次数据同步是正常还是掉电后重新上电后的第一次同步。  手机 APP 发送请">
@@ -425,7 +425,14 @@
 <li>自定义一个 NoScrollViewPagerAdapter</li>
 <li>自定义一个 LogUtil</li>
 <li>RecyclerView 使用</li>
-<li></li>
+<li>Bundle 使用</li>
+</ul>
+<h1 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h1><ul>
+<li>引入 ButterKnife</li>
+<li>使用异步加载图表数据，现在加载月、年数据比较慢</li>
+<li>同步时间过长之后，再次同步一次会出现数据错乱情况</li>
+<li>引入网络数据</li>
+<li>引入 Google 的 easypermissions 作为权限获取库</li>
 </ul>
 
       
@@ -573,7 +580,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +591,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -704,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础功能"><span class="nav-number">1.</span> <span class="nav-text">基础功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能实现过程"><span class="nav-number">2.</span> <span class="nav-text">功能实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发辅助"><span class="nav-number">3.</span> <span class="nav-text">开发辅助</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库框架"><span class="nav-number">3.1.</span> <span class="nav-text">数据库框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库调试"><span class="nav-number">3.2.</span> <span class="nav-text">数据库调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能刷新框架"><span class="nav-number">3.3.</span> <span class="nav-text">智能刷新框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表显示框架"><span class="nav-number">3.4.</span> <span class="nav-text">图表显示框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragment-切换指示器"><span class="nav-number">3.5.</span> <span class="nav-text">Fragment 切换指示器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义选择器框架"><span class="nav-number">3.6.</span> <span class="nav-text">自定义选择器框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础功能"><span class="nav-number">1.</span> <span class="nav-text">基础功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能实现过程"><span class="nav-number">2.</span> <span class="nav-text">功能实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发辅助"><span class="nav-number">3.</span> <span class="nav-text">开发辅助</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库框架"><span class="nav-number">3.1.</span> <span class="nav-text">数据库框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库调试"><span class="nav-number">3.2.</span> <span class="nav-text">数据库调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能刷新框架"><span class="nav-number">3.3.</span> <span class="nav-text">智能刷新框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表显示框架"><span class="nav-number">3.4.</span> <span class="nav-text">图表显示框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragment-切换指示器"><span class="nav-number">3.5.</span> <span class="nav-text">Fragment 切换指示器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义选择器框架"><span class="nav-number">3.6.</span> <span class="nav-text">自定义选择器框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#改进"><span class="nav-number">5.</span> <span class="nav-text">改进</span></a></li></ol></div>
             
 
           </div>
