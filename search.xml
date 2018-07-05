@@ -6,14 +6,28 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[Fragment使用]]></title>
+    <title><![CDATA[Fragment 使用]]></title>
     <url>%2F2018%2F07%2F05%2FFragment%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Fragment 的 add、hide、show123456789101112131415161718192021222324252627282930313233343536373839404142434445public class FragmentHelper &#123; /** * 添加 Fragment * @param fragmentManager * @param fragment * @param fragmentTag */ public static void addFragment(FragmentManager fragmentManager, Fragment fragment, String fragmentTag)&#123; if (fragmentManager != null)&#123; FragmentTransaction transaction = fragmentManager.beginTransaction(); transaction.add(R.id.frag_main, fragment, fragmentTag); transaction.commit(); &#125; &#125; /** * 显示已存在的 Fragment * @param fragmentManager * @param fragment */ public static void showFragment(FragmentManager fragmentManager, Fragment fragment)&#123; FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); if (fragment != null)&#123; fragmentTransaction.show(fragment); fragmentTransaction.commit(); &#125; &#125; /** * 隐藏所有的 Fragment * @param fragmentManager */ public static void hideAllFragment(FragmentManager fragmentManager)&#123; FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); Fragment dashboard_fragment = fragmentManager.findFragmentByTag(&quot;dashboard_fragment&quot;); if (dashboard_fragment != null)&#123; fragmentTransaction.hide(dashboard_fragment); &#125; fragmentTransaction.commit(); &#125;&#125; 参考资料 Fragment全解析系列 Fragment你真的熟悉吗？看了才知道 Android基础：Fragment，看这篇就够了]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Fragment</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[自定义View]]></title>
+    <title><![CDATA[自定义 View]]></title>
     <url>%2F2018%2F07%2F05%2F%E8%87%AA%E5%AE%9A%E4%B9%89View%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[参考资料 安卓自定义View教程 仿支付宝芝麻信用的仪表盘]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>自定义 View</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Intent使用]]></title>
@@ -28,7 +42,7 @@
   <entry>
     <title><![CDATA[Broadcast使用]]></title>
     <url>%2F2018%2F07%2F05%2FBroadcast%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[广播机制 标准广播 完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收 接收系统广播动态注册监听网络变化]]></content>
   </entry>
   <entry>
     <title><![CDATA[ViewPager使用]]></title>
