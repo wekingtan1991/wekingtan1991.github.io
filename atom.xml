@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-05T05:48:59.578Z</updated>
+  <updated>2018-07-06T05:48:15.430Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>异常捕获代码</title>
+    <link href="http://yoursite.com/2018/07/06/%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%BB%A3%E7%A0%81/"/>
+    <id>http://yoursite.com/2018/07/06/异常捕获代码/</id>
+    <published>2018-07-06T05:48:15.000Z</published>
+    <updated>2018-07-06T05:48:15.430Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Content Provider 内容提供器</title>
+    <link href="http://yoursite.com/2018/07/06/ContentProvider%20%E5%86%85%E5%AE%B9%E6%8F%90%E4%BE%9B%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/07/06/ContentProvider 内容提供器/</id>
+    <published>2018-07-06T05:26:27.000Z</published>
+    <updated>2018-07-07T02:13:20.544Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><code>内容提供器</code>主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。</p><h1 id="运行时权限"><a href="#运行时权限" class="headerlink" title="运行时权限"></a>运行时权限</h1><h2 id="Android-的权限机制"><a href="#Android-的权限机制" class="headerlink" title="Android 的权限机制"></a>Android 的权限机制</h2><p>每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。</p><h2 id="在程序运行时申请权限"><a href="#在程序运行时申请权限" class="headerlink" title="在程序运行时申请权限"></a>在程序运行时申请权限</h2><p>1、 首先判断用户是不是已经给我们授权了：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(ContextCompat.checkSelfPermission(Context, Manifest.permission.权限) != PackageManager.PErMISSION_GRANTED)&#123;</span><br><span class="line">  ActivityCompat.requestPermissions(Context, new String[]&#123;Manifest.permission.权限&#125;, 常量);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  //do something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2、 如果已经授权就执行逻辑操作；如果没有授权，则调用 <code>ActivityCompat.requestPermissions()</code> 方法，最终回调到 <code>onRequestPermissionResult()</code> 方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) &#123;</span><br><span class="line">    super.onRequestPermissionsResult(requestCode, permissions, grantResults);</span><br><span class="line">    switch (requestCode) &#123;</span><br><span class="line">        case 常量:</span><br><span class="line">            if(grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PErMISSION_GRANTED)&#123;</span><br><span class="line">              //do something</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">              //do another thing</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="访问其他程序中的数据"><a href="#访问其他程序中的数据" class="headerlink" title="访问其他程序中的数据"></a>访问其他程序中的数据</h1><p>如果想要访问内容提供器中共享的数据，就一定要借助 ContentResolver 类，通过 Context 的 getContentResolver() 方法获得实例。</p><h2 id="ContentResolver-的基本用法"><a href="#ContentResolver-的基本用法" class="headerlink" title="ContentResolver 的基本用法"></a>ContentResolver 的基本用法</h2><ul><li>insert() ：增加数据</li><li>update() ：更新数据</li><li>delete() ：删除数据</li><li>query()  ：查询数据</li></ul><p>ContentResolver 中的增删改查方法都不是接受表名参数，而是使用一个 Uri 参数代替，即<code>内容 URI</code>。</p><h3 id="关于内容-URI"><a href="#关于内容-URI" class="headerlink" title="关于内容 URI"></a>关于内容 URI</h3><p><code>内容 URI</code> 由 <code>authority</code> 和 <code>path</code> 组成。其中：</p><ul><li><p>authority 是用于对不同的应用程序做区分的，采用程序包命名。例如：com.example.app.Provider。</p></li><li><p>path 是对同一程序不同的表做区分的，通常添加到 authority 后面。例如：com.example.app.Provider/table1，com.example.app.Provider/table2。</p></li></ul><p>解析内容 URI 的方法：<br><code>Uri uri = Uri.parse(&quot;com.example.app.Provider/table1&quot;);</code></p><h3 id="增删改查方法演示"><a href="#增删改查方法演示" class="headerlink" title="增删改查方法演示"></a>增删改查方法演示</h3><h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Cursor cursor = getContentResolver().query(</span><br><span class="line">  uri,</span><br><span class="line">  projection,</span><br><span class="line">  selection,</span><br><span class="line">  selectionArgs,</span><br><span class="line">  sortOrder</span><br><span class="line">  );</span><br></pre></td></tr></table></figure><table><thead><tr><th style="text-align:left">query() 方法参数</th><th style="text-align:left">对应 SQL 部分</th><th style="text-align:left">描述</th></tr></thead><tbody><tr><td style="text-align:left">uri</td><td style="text-align:left">from table_name</td><td style="text-align:left">指定查询某个应用程序下的某一张表</td></tr><tr><td style="text-align:left">projection</td><td style="text-align:left">select column1，column2</td><td style="text-align:left">指定查询的列名</td></tr><tr><td style="text-align:left">selection</td><td style="text-align:left">where column = value</td><td style="text-align:left">指定 where 的约束条件</td></tr><tr><td style="text-align:left">selectionArgs</td><td style="text-align:left">-</td><td style="text-align:left">为 where 中的占位符提供具体的值</td></tr><tr><td style="text-align:left">orderBy</td><td style="text-align:left">order by column1,column2</td><td style="text-align:left">指定查询结果的排序方式</td></tr></tbody></table><p>查询完成后返回的仍然是一个 Cursor 对象，将数据从 Cursor 对象中读取：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(cursor != null)&#123;</span><br><span class="line">  while(cursor.moveToNext())&#123;</span><br><span class="line">    String column1 = cursor.getstring(cursor.getColumnIndex(&quot;column1&quot;));</span><br><span class="line">    int column2 = cursor.getInt(cursor.getColumnIndex(&quot;column2&quot;));</span><br><span class="line">  &#125;</span><br><span class="line">  cursor.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = new ContentValues();</span><br><span class="line">values.put(&quot;column1&quot;, &quot;text&quot;);</span><br><span class="line">values.put(&quot;column2&quot;, 1);</span><br><span class="line">getContentResolver().insert(uri, values);</span><br></pre></td></tr></table></figure><h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = new ContentValues();</span><br><span class="line">values.put(&quot;column1&quot;, &quot;&quot;);</span><br><span class="line">getContentResolver().update(uri, values, &quot;column1 = ? and column2 = ?&quot;, new String[] &#123;&quot;text&quot;, &quot;1&quot;&#125;);</span><br></pre></td></tr></table></figure><h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p><code>getContentResolver().delete(uri, &quot;column2 = ?&quot;, new String[] {&quot;1&quot;})</code></p><h1 id="创建自己的内容提供器"><a href="#创建自己的内容提供器" class="headerlink" title="创建自己的内容提供器"></a>创建自己的内容提供器</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;&lt;code&gt;内容提供器&lt;/code&gt;主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="内容提供器" scheme="http://yoursite.com/tags/%E5%86%85%E5%AE%B9%E6%8F%90%E4%BE%9B%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>RecyclerView使用</title>
@@ -101,8 +142,8 @@
   
   <entry>
     <title>Service 使用</title>
-    <link href="http://yoursite.com/2018/07/05/Service%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/05/Service使用/</id>
+    <link href="http://yoursite.com/2018/07/05/Service%20%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Service 使用/</id>
     <published>2018-07-05T05:47:42.000Z</published>
     <updated>2018-07-06T04:22:20.156Z</updated>
     
@@ -131,8 +172,8 @@
   
   <entry>
     <title>Broadcast 使用</title>
-    <link href="http://yoursite.com/2018/07/05/Broadcast%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/05/Broadcast使用/</id>
+    <link href="http://yoursite.com/2018/07/05/Broadcast%20%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/07/05/Broadcast 使用/</id>
     <published>2018-07-05T05:47:25.000Z</published>
     <updated>2018-07-05T16:06:00.904Z</updated>
     

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android,Service,线程," />
+  <meta name="keywords" content="Android,内容提供器," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
-<meta name="keywords" content="Android,Service,线程">
+<meta name="description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
+<meta name="keywords" content="Android,内容提供器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Service 使用">
-<meta property="og:url" content="http://yoursite.com/2018/07/05/Service使用/index.html">
+<meta property="og:title" content="Content Provider 内容提供器">
+<meta property="og:url" content="http://yoursite.com/2018/07/06/ContentProvider 内容提供器/index.html">
 <meta property="og:site_name" content="weking 的技术">
-<meta property="og:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
+<meta property="og:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-06T04:22:20.156Z">
+<meta property="og:updated_time" content="2018-07-07T02:13:20.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Service 使用">
-<meta name="twitter:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
+<meta name="twitter:title" content="Content Provider 内容提供器">
+<meta name="twitter:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/05/Service使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/06/ContentProvider 内容提供器/"/>
 
 
 
 
 
-  <title>Service 使用 | weking 的技术</title>
+  <title>Content Provider 内容提供器 | weking 的技术</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/Service使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/ContentProvider 内容提供器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wekingtan">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Service 使用</h1>
+          <h1 class="post-title" itemprop="name headline">Content Provider 内容提供器</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T13:47:42+08:00">
-                2018-07-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T13:26:27+08:00">
+                2018-07-06
               </time>
             
 
@@ -378,59 +378,71 @@
       
 
       
-        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
-<p><code>服务</code>是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些<code>不需要和用户交互而还要求长期运行的任务</code>。</p>
-</blockquote>
-<p>服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。</p>
-<p>服务并不会自动开启线程，默认运行在主线程中。</p>
-<h1 id="Android-多线程"><a href="#Android-多线程" class="headerlink" title="Android 多线程"></a>Android 多线程</h1><h2 id="线程基本用法"><a href="#线程基本用法" class="headerlink" title="线程基本用法"></a>线程基本用法</h2><p>1.继承的方式耦合性有点高<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> MyThread().start();</span><br></pre></td></tr></table></figure></p>
-<p>2.实现 Runnable 接口的方式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyThread myThread = <span class="keyword">new</span> MyThread();</span><br><span class="line"><span class="keyword">new</span> Thread(myThread).start();</span><br></pre></td></tr></table></figure></p>
-<p>3.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure></p>
-<h2 id="在子线程中更新-UI"><a href="#在子线程中更新-UI" class="headerlink" title="在子线程中更新 UI"></a>在子线程中更新 UI</h2><p>Android 是不允许在子线程中更新 UI。但它提供了一套<code>异步消息处理机制</code>，可以解决在子线程中进行 UI 操作。</p>
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><code>内容提供器</code>主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。</p>
+<h1 id="运行时权限"><a href="#运行时权限" class="headerlink" title="运行时权限"></a>运行时权限</h1><h2 id="Android-的权限机制"><a href="#Android-的权限机制" class="headerlink" title="Android 的权限机制"></a>Android 的权限机制</h2><p>每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。</p>
+<h2 id="在程序运行时申请权限"><a href="#在程序运行时申请权限" class="headerlink" title="在程序运行时申请权限"></a>在程序运行时申请权限</h2><p>1、 首先判断用户是不是已经给我们授权了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(ContextCompat.checkSelfPermission(Context, Manifest.permission.权限) != PackageManager.PErMISSION_GRANTED)&#123;</span><br><span class="line">  ActivityCompat.requestPermissions(Context, new String[]&#123;Manifest.permission.权限&#125;, 常量);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  //do something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、 如果已经授权就执行逻辑操作；如果没有授权，则调用 <code>ActivityCompat.requestPermissions()</code> 方法，最终回调到 <code>onRequestPermissionResult()</code> 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) &#123;</span><br><span class="line">    super.onRequestPermissionsResult(requestCode, permissions, grantResults);</span><br><span class="line">    switch (requestCode) &#123;</span><br><span class="line">        case 常量:</span><br><span class="line">            if(grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PErMISSION_GRANTED)&#123;</span><br><span class="line">              //do something</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">              //do another thing</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="访问其他程序中的数据"><a href="#访问其他程序中的数据" class="headerlink" title="访问其他程序中的数据"></a>访问其他程序中的数据</h1><p>如果想要访问内容提供器中共享的数据，就一定要借助 ContentResolver 类，通过 Context 的 getContentResolver() 方法获得实例。</p>
+<h2 id="ContentResolver-的基本用法"><a href="#ContentResolver-的基本用法" class="headerlink" title="ContentResolver 的基本用法"></a>ContentResolver 的基本用法</h2><ul>
+<li>insert() ：增加数据</li>
+<li>update() ：更新数据</li>
+<li>delete() ：删除数据</li>
+<li>query()  ：查询数据</li>
+</ul>
+<p>ContentResolver 中的增删改查方法都不是接受表名参数，而是使用一个 Uri 参数代替，即<code>内容 URI</code>。</p>
+<h3 id="关于内容-URI"><a href="#关于内容-URI" class="headerlink" title="关于内容 URI"></a>关于内容 URI</h3><p><code>内容 URI</code> 由 <code>authority</code> 和 <code>path</code> 组成。其中：</p>
 <ul>
-<li><p>首先在主线程创建一个 Handler，并重写 handleMessage() 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private Handler handler = new Handler()&#123;</span><br><span class="line"></span><br><span class="line">   public void handleMessage(Message msg)&#123;</span><br><span class="line">     switch (msg.what)&#123;</span><br><span class="line">       case 常量</span><br><span class="line">       //在这里进行 UI 操作</span><br><span class="line">       break;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>authority 是用于对不同的应用程序做区分的，采用程序包命名。例如：com.example.app.Provider。</p>
 </li>
-<li><p>在需要更新 UI 的子线程中创建一个 Message 对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Message message = new Message();</span><br><span class="line">message.what = 常量;</span><br><span class="line">handler.sendMessage(message); //将 Message 对象发送出去</span><br></pre></td></tr></table></figure>
+<li><p>path 是对同一程序不同的表做区分的，通常添加到 authority 后面。例如：com.example.app.Provider/table1，com.example.app.Provider/table2。</p>
 </li>
 </ul>
-<h2 id="解析异步消息处理机制"><a href="#解析异步消息处理机制" class="headerlink" title="解析异步消息处理机制"></a>解析异步消息处理机制</h2><p>Android 的异步消息处理机制由 4 部分组成：Message、Handler、MessageQueue、Looper。</p>
-<h3 id="Message"><a href="#Message" class="headerlink" title="Message"></a>Message</h3><p>Message 是在线程之间传递消息，可以在内部携带少量消息，用于在不同线程之间交换数据。<code>what</code> 字段携带 String 数据，<code>arg1</code>、<code>arg2</code> 字段携带整型数据，<code>obj</code> 字段携带一个 Object 对象。</p>
-<h3 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h3><p>主要用于发送和处理消息。<br>发送消息一般用 Handler 的 <code>sendMessage()</code> 方法。<br>接收消息 Handler 的 <code>handleMessage()</code> 方法。</p>
-<h3 id="MessageQueue"><a href="#MessageQueue" class="headerlink" title="MessageQueue"></a>MessageQueue</h3><p>MessageQueue 是消息队列，主要用于存放所有通过 Handler 发送的消息。<code>每个线程只会有一个 MessageQueue 对象</code>。</p>
-<h3 id="Looper"><a href="#Looper" class="headerlink" title="Looper"></a>Looper</h3><p>Looper 是每个线程中的 MessageQueue 管家，调用 Looper 的 <code>loop()</code> 方法后，就会进入一个无限循环，每当发现 MessageQueue 中存在的一条消息，就会将它取出，并传递到 Handler 的 handleMessage() 方法中。<code>每个线程只有一个 Looper 对象</code>。</p>
-<h2 id="使用-AsyncTask"><a href="#使用-AsyncTask" class="headerlink" title="使用 AsyncTask"></a>使用 AsyncTask</h2><p>由于 AsyncTask 是一个抽象类，所以我们需要<code>创建一个子类去继承</code>。</p>
-<h3 id="AsyncTask-类的-3-个泛型参数："><a href="#AsyncTask-类的-3-个泛型参数：" class="headerlink" title="AsyncTask 类的 3 个泛型参数："></a>AsyncTask 类的 3 个泛型参数：</h3><ul>
-<li>Params ：在执行 AsyncTask 时需要传入的参数，可用于在后台任务中使用。</li>
-<li>Progress ：后台任务执行时，如果需要在界面上显示当前的进度，则使用这里指定的泛型为进度单位。</li>
-<li>Result ：当任务执行完毕后，如果需要对结果进行返回，则使用这里指定的泛型作为返回值类型。</li>
-</ul>
-<h3 id="AsyncTask-几个方法："><a href="#AsyncTask-几个方法：" class="headerlink" title="AsyncTask 几个方法："></a>AsyncTask 几个方法：</h3><ul>
-<li><p>onPreExecute() ：<br>这个方法会在<code>后台任务开始执行之前调用</code>，用于进行一些界面上的初始化操作，比如显示一个进度条对话框。</p>
-</li>
-<li><p>doInBackground(Params…) :<br>1、 所有代码都会在子线程中运行；<br>2、 任务一旦完成就会返回 return 语句，但如果 AsyncTask 第三个泛型参数为 Void，则不返回任务执行结果；<br>3、 这个方法中不可以执行 UI 操作，如果要执行 UI 操作，则可以调用 publishProgress(Progress…) 方法完成；</p>
-</li>
-<li><p>onProgressUpdate(Progress…) ：<br>当后台任务中调用 publishProgress(Progress…) 方法后，onProgressUpdate(Progress…) 方法就会调用。</p>
-</li>
-<li><p>onPostExcute(Result) ：<br>当<code>后台任务执行完毕</code>并通过 return 语句执行返回时，这个方法就会调用。</p>
-</li>
-</ul>
-<h3 id="AsyncTask-总结"><a href="#AsyncTask-总结" class="headerlink" title="AsyncTask 总结"></a>AsyncTask 总结</h3><p>doInBackground(Params…) 执行具体的耗时任务；<br>onProgressUpdate(Progress…) 进行更新 UI；<br>onProgressUpdate(Progress…) 执行任务收尾；</p>
-<p>启动这个任务：<code>new targetTask().execute();</code></p>
-<h1 id="服务的基本用法"><a href="#服务的基本用法" class="headerlink" title="服务的基本用法"></a>服务的基本用法</h1><h2 id="定义一个服务"><a href="#定义一个服务" class="headerlink" title="定义一个服务"></a>定义一个服务</h2><p>创建一个 Service 并在 AndroidManifest 中注册，其中 <code>Exported</code> 属性表示是否允许除了当前程序之外的其他程序访问这个服务，<code>Enabled</code> 属性表示是否启用这个服务。</p>
-<h2 id="活动和服务进行通信"><a href="#活动和服务进行通信" class="headerlink" title="活动和服务进行通信"></a>活动和服务进行通信</h2><ol>
-<li>创建一个子类继承 Service</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class xxxService extends Service&#123;</span><br><span class="line"></span><br><span class="line">  private final IBinder mBinder = new LocalBinder();</span><br><span class="line"></span><br><span class="line">    public class LocalBinder extends Binder &#123;</span><br><span class="line">        public xxxService getService() &#123;</span><br><span class="line">            return xxxService.this;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public IBinder onBind(Intent intent) &#123;</span><br><span class="line">        return mBinder;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>在 Activity/Fragment 中调用 Service：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity&#123;</span><br><span class="line">  private xxxService.LocalBinder localBinder;</span><br><span class="line">  private xxxService mxxxService;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 绑定 xxxService 服务结果回调</span><br><span class="line">     */</span><br><span class="line">    private ServiceConnection serviceConnection = new ServiceConnection() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onServiceConnected(ComponentName name, IBinder service) &#123;</span><br><span class="line">            localBinder = (xxxService.LocalBinder) service; //通过向下转型得到 localBinder 实例</span><br><span class="line">            mxxxService = localBinder.getService();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onServiceDisconnected(ComponentName name) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">       super.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">       Intent bindIntent = new Intent(this, xxxService.class);</span><br><span class="line">       bindService(bindIntent, serviceConnection, Context.BIND_AUTO_CREATE); //绑定服务获取持久连接</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void onDestroy() &#123;</span><br><span class="line">       super.onDestroy();</span><br><span class="line">       unbindService(serviceConnection);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="服务的更多技巧"><a href="#服务的更多技巧" class="headerlink" title="服务的更多技巧"></a>服务的更多技巧</h1><h2 id="使用前台服务"><a href="#使用前台服务" class="headerlink" title="使用前台服务"></a>使用前台服务</h2><p>前台服务和普通服务最大区别是，它会一直有一个正在运行的图标在系统的状态栏显示，下拉状态栏可以看到更加详细的信息。类似于彩云天气的前台服务效果。</p>
-<h2 id="使用-IntentService"><a href="#使用-IntentService" class="headerlink" title="使用 IntentService"></a>使用 IntentService</h2><p>一个异步的、会自动停止的服务。<code>onHandleIntent(Intent intent)</code> 方法运行在子线程中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class xxxIntentService extends IntentService&#123;</span><br><span class="line"></span><br><span class="line">    public xxxIntentService()&#123;</span><br><span class="line">      super(&quot;xxxIntentService&quot;); //调用父类的有参构造函数</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onHandleIntent(Intent intent) &#123;</span><br><span class="line"></span><br><span class="line">      //当前的逻辑已经在子线程中运行</span><br><span class="line"></span><br><span class="line">      //打印当前线程的 id</span><br><span class="line">      Log.d(&quot;xxxIntentService&quot;, &quot;Thread id is&quot; + Thread.currentThread().getId());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onDestroy() &#123;</span><br><span class="line">      super.onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>解析内容 URI 的方法：<br><code>Uri uri = Uri.parse(&quot;com.example.app.Provider/table1&quot;);</code></p>
+<h3 id="增删改查方法演示"><a href="#增删改查方法演示" class="headerlink" title="增删改查方法演示"></a>增删改查方法演示</h3><h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Cursor cursor = getContentResolver().query(</span><br><span class="line">  uri,</span><br><span class="line">  projection,</span><br><span class="line">  selection,</span><br><span class="line">  selectionArgs,</span><br><span class="line">  sortOrder</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">query() 方法参数</th>
+<th style="text-align:left">对应 SQL 部分</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">uri</td>
+<td style="text-align:left">from table_name</td>
+<td style="text-align:left">指定查询某个应用程序下的某一张表</td>
+</tr>
+<tr>
+<td style="text-align:left">projection</td>
+<td style="text-align:left">select column1，column2</td>
+<td style="text-align:left">指定查询的列名</td>
+</tr>
+<tr>
+<td style="text-align:left">selection</td>
+<td style="text-align:left">where column = value</td>
+<td style="text-align:left">指定 where 的约束条件</td>
+</tr>
+<tr>
+<td style="text-align:left">selectionArgs</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">为 where 中的占位符提供具体的值</td>
+</tr>
+<tr>
+<td style="text-align:left">orderBy</td>
+<td style="text-align:left">order by column1,column2</td>
+<td style="text-align:left">指定查询结果的排序方式</td>
+</tr>
+</tbody>
+</table>
+<p>查询完成后返回的仍然是一个 Cursor 对象，将数据从 Cursor 对象中读取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(cursor != null)&#123;</span><br><span class="line">  while(cursor.moveToNext())&#123;</span><br><span class="line">    String column1 = cursor.getstring(cursor.getColumnIndex(&quot;column1&quot;));</span><br><span class="line">    int column2 = cursor.getInt(cursor.getColumnIndex(&quot;column2&quot;));</span><br><span class="line">  &#125;</span><br><span class="line">  cursor.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = new ContentValues();</span><br><span class="line">values.put(&quot;column1&quot;, &quot;text&quot;);</span><br><span class="line">values.put(&quot;column2&quot;, 1);</span><br><span class="line">getContentResolver().insert(uri, values);</span><br></pre></td></tr></table></figure>
+<h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = new ContentValues();</span><br><span class="line">values.put(&quot;column1&quot;, &quot;&quot;);</span><br><span class="line">getContentResolver().update(uri, values, &quot;column1 = ? and column2 = ?&quot;, new String[] &#123;&quot;text&quot;, &quot;1&quot;&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p><code>getContentResolver().delete(uri, &quot;column2 = ?&quot;, new String[] {&quot;1&quot;})</code></p>
+<h1 id="创建自己的内容提供器"><a href="#创建自己的内容提供器" class="headerlink" title="创建自己的内容提供器"></a>创建自己的内容提供器</h1>
       
     </div>
     
@@ -459,9 +471,7 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/Service/" rel="tag"># Service</a>
-          
-            <a href="/tags/线程/" rel="tag"># 线程</a>
+            <a href="/tags/内容提供器/" rel="tag"># 内容提供器</a>
           
         </div>
       
@@ -474,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/05/Broadcast使用/" rel="next" title="Broadcast 使用">
-                <i class="fa fa-chevron-left"></i> Broadcast 使用
+              <a href="/2018/07/05/RecyclerView使用/" rel="next" title="RecyclerView使用">
+                <i class="fa fa-chevron-left"></i> RecyclerView使用
               </a>
             
           </div>
@@ -484,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/05/Intent使用/" rel="prev" title="Intent使用">
-                Intent使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/06/异常捕获代码/" rel="prev" title="异常捕获代码">
+                异常捕获代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -567,7 +577,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +599,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -713,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-多线程"><span class="nav-number">2.</span> <span class="nav-text">Android 多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程基本用法"><span class="nav-number">2.1.</span> <span class="nav-text">线程基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在子线程中更新-UI"><span class="nav-number">2.2.</span> <span class="nav-text">在子线程中更新 UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析异步消息处理机制"><span class="nav-number">2.3.</span> <span class="nav-text">解析异步消息处理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Message"><span class="nav-number">2.3.1.</span> <span class="nav-text">Message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handler"><span class="nav-number">2.3.2.</span> <span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MessageQueue"><span class="nav-number">2.3.3.</span> <span class="nav-text">MessageQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Looper"><span class="nav-number">2.3.4.</span> <span class="nav-text">Looper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-AsyncTask"><span class="nav-number">2.4.</span> <span class="nav-text">使用 AsyncTask</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncTask-类的-3-个泛型参数："><span class="nav-number">2.4.1.</span> <span class="nav-text">AsyncTask 类的 3 个泛型参数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncTask-几个方法："><span class="nav-number">2.4.2.</span> <span class="nav-text">AsyncTask 几个方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncTask-总结"><span class="nav-number">2.4.3.</span> <span class="nav-text">AsyncTask 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务的基本用法"><span class="nav-number">3.</span> <span class="nav-text">服务的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个服务"><span class="nav-number">3.1.</span> <span class="nav-text">定义一个服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动和服务进行通信"><span class="nav-number">3.2.</span> <span class="nav-text">活动和服务进行通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务的更多技巧"><span class="nav-number">4.</span> <span class="nav-text">服务的更多技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用前台服务"><span class="nav-number">4.1.</span> <span class="nav-text">使用前台服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-IntentService"><span class="nav-number">4.2.</span> <span class="nav-text">使用 IntentService</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时权限"><span class="nav-number">2.</span> <span class="nav-text">运行时权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-的权限机制"><span class="nav-number">2.1.</span> <span class="nav-text">Android 的权限机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在程序运行时申请权限"><span class="nav-number">2.2.</span> <span class="nav-text">在程序运行时申请权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问其他程序中的数据"><span class="nav-number">3.</span> <span class="nav-text">访问其他程序中的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ContentResolver-的基本用法"><span class="nav-number">3.1.</span> <span class="nav-text">ContentResolver 的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于内容-URI"><span class="nav-number">3.1.1.</span> <span class="nav-text">关于内容 URI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改查方法演示"><span class="nav-number">3.1.2.</span> <span class="nav-text">增删改查方法演示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">删</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建自己的内容提供器"><span class="nav-number">4.</span> <span class="nav-text">创建自己的内容提供器</span></a></li></ol></div>
             
 
           </div>
