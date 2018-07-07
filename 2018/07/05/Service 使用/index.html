@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
+<meta name="description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
 <meta name="keywords" content="Android,Service,线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Service 使用">
 <meta property="og:url" content="http://yoursite.com/2018/07/05/Service 使用/index.html">
 <meta property="og:site_name" content="weking 的技术">
-<meta property="og:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
+<meta property="og:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-06T04:22:20.156Z">
+<meta property="og:updated_time" content="2018-07-07T03:18:41.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Service 使用">
-<meta name="twitter:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。 An">
+<meta name="twitter:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
 
 
 
@@ -383,6 +383,7 @@
 </blockquote>
 <p>服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。</p>
 <p>服务并不会自动开启线程，默认运行在主线程中。</p>
+<a id="more"></a>
 <h1 id="Android-多线程"><a href="#Android-多线程" class="headerlink" title="Android 多线程"></a>Android 多线程</h1><h2 id="线程基本用法"><a href="#线程基本用法" class="headerlink" title="线程基本用法"></a>线程基本用法</h2><p>1.继承的方式耦合性有点高<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> MyThread().start();</span><br></pre></td></tr></table></figure></p>
 <p>2.实现 Runnable 接口的方式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyThread myThread = <span class="keyword">new</span> MyThread();</span><br><span class="line"><span class="keyword">new</span> Thread(myThread).start();</span><br></pre></td></tr></table></figure></p>
 <p>3.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//处理具体的逻辑</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure></p>

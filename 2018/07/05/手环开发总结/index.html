@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况  功能实现过程 通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含有掉电标志字节，用于判断本次数据同步是正常还是掉电后重新上电后的第一次同步。  手机 APP 发送请">
+<meta name="description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况">
 <meta name="keywords" content="Android,BLE 4.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BLE 手环开发总结">
 <meta property="og:url" content="http://yoursite.com/2018/07/05/手环开发总结/index.html">
 <meta property="og:site_name" content="weking 的技术">
-<meta property="og:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况  功能实现过程 通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含有掉电标志字节，用于判断本次数据同步是正常还是掉电后重新上电后的第一次同步。  手机 APP 发送请">
+<meta property="og:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T08:21:34.713Z">
+<meta property="og:updated_time" content="2018-07-07T03:18:41.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BLE 手环开发总结">
-<meta name="twitter:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况  功能实现过程 通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含有掉电标志字节，用于判断本次数据同步是正常还是掉电后重新上电后的第一次同步。  手机 APP 发送请">
+<meta name="twitter:description" content="基础功能 显示步数、距离、卡路里、电量、目标完成状况">
 
 
 
@@ -381,6 +381,7 @@
         <h1 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h1><ul>
 <li>显示步数、距离、卡路里、电量、目标完成状况</li>
 </ul>
+<a id="more"></a>
 <h1 id="功能实现过程"><a href="#功能实现过程" class="headerlink" title="功能实现过程"></a>功能实现过程</h1><ul>
 <li><p>通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回<code>当前时刻</code>到<code>上一次同步数据时刻</code>的数据（注：数据以1小时为单位，返回的每个1小时数据是<code>每个1小时的累计数据</code>)，这次返回的数据中含有<code>掉电标志字节</code>，用于判断本次数据同步是<code>正常</code>还是<code>掉电后重新上电后的第一次同步</code>。</p>
 </li>

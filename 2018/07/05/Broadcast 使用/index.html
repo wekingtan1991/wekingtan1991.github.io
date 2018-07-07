@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收  接收系统广播动态注册监听网络变化动态注册的广播接收器可以随意地控制注册和注销，但必须要在程序启动之后才能街道广播。 静态注册实现开机启动发送自定义广播发送标准广播发送有序广播使用 sendOrderBrocast() 发送广播，同时需要在 AndroidManifest 中设置优先">
+<meta name="description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Broadcast 使用">
 <meta property="og:url" content="http://yoursite.com/2018/07/05/Broadcast 使用/index.html">
 <meta property="og:site_name" content="weking 的技术">
-<meta property="og:description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收  接收系统广播动态注册监听网络变化动态注册的广播接收器可以随意地控制注册和注销，但必须要在程序启动之后才能街道广播。 静态注册实现开机启动发送自定义广播发送标准广播发送有序广播使用 sendOrderBrocast() 发送广播，同时需要在 AndroidManifest 中设置优先">
+<meta property="og:description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T16:06:00.904Z">
+<meta property="og:updated_time" content="2018-07-07T03:18:41.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Broadcast 使用">
-<meta name="twitter:description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收  接收系统广播动态注册监听网络变化动态注册的广播接收器可以随意地控制注册和注销，但必须要在程序启动之后才能街道广播。 静态注册实现开机启动发送自定义广播发送标准广播发送有序广播使用 sendOrderBrocast() 发送广播，同时需要在 AndroidManifest 中设置优先">
+<meta name="twitter:description" content="广播机制 标准广播  完全异步执行，所有广播接收器同时接收 有序广播 同步执行，同一时刻只有一个广播接收器可以接收">
 
 
 
@@ -359,6 +359,7 @@
 <li>标准广播  完全异步执行，所有广播接收器同时接收</li>
 <li>有序广播 同步执行，同一时刻只有一个广播接收器可以接收</li>
 </ul>
+<a id="more"></a>
 <h1 id="接收系统广播"><a href="#接收系统广播" class="headerlink" title="接收系统广播"></a>接收系统广播</h1><h2 id="动态注册监听网络变化"><a href="#动态注册监听网络变化" class="headerlink" title="动态注册监听网络变化"></a>动态注册监听网络变化</h2><p>动态注册的广播接收器可以随意地控制注册和注销，但必须要在程序启动之后才能街道广播。</p>
 <h2 id="静态注册实现开机启动"><a href="#静态注册实现开机启动" class="headerlink" title="静态注册实现开机启动"></a>静态注册实现开机启动</h2><h1 id="发送自定义广播"><a href="#发送自定义广播" class="headerlink" title="发送自定义广播"></a>发送自定义广播</h1><h2 id="发送标准广播"><a href="#发送标准广播" class="headerlink" title="发送标准广播"></a>发送标准广播</h2><h2 id="发送有序广播"><a href="#发送有序广播" class="headerlink" title="发送有序广播"></a>发送有序广播</h2><p>使用 <code>sendOrderBrocast()</code> 发送广播，同时需要在 AndroidManifest 中设置优先级 <code>&lt;intent-filter android:priority= &gt;</code></p>
 <h1 id="使用本地广播"><a href="#使用本地广播" class="headerlink" title="使用本地广播"></a>使用本地广播</h1><p><code>LocalBroadcastManger</code> 来管理广播。<br><code>LocalBroadcastManger localBroadcastmanger = LocalBroadcastManger.getInstance(this);</code> 获取 <code>LocalBroadcastManger</code> 实例。<br><code>localBroadcastmanger.sendBroadcast()</code> 发送广播。<br><code>localBroadcastmanger.registerReceiver()</code> 注册广播。<br><code>localBroadcastmanger.unregisterReceiver()</code> 注销广播。</p>

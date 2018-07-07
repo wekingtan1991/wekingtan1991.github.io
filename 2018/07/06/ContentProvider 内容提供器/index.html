@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
+<meta name="description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。">
 <meta name="keywords" content="Android,内容提供器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Content Provider 内容提供器">
 <meta property="og:url" content="http://yoursite.com/2018/07/06/ContentProvider 内容提供器/index.html">
 <meta property="og:site_name" content="weking 的技术">
-<meta property="og:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
+<meta property="og:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-07T02:13:20.544Z">
+<meta property="og:updated_time" content="2018-07-07T03:18:41.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Content Provider 内容提供器">
-<meta name="twitter:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。 运行时权限Android 的权限机制每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。 在程序运行时申请权限1、 首先判断用户是不是已经给我们授权了： 12345if(ContextCo">
+<meta name="twitter:description" content="定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。">
 
 
 
@@ -379,6 +379,7 @@
 
       
         <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><code>内容提供器</code>主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。</p>
+<a id="more"></a>
 <h1 id="运行时权限"><a href="#运行时权限" class="headerlink" title="运行时权限"></a>运行时权限</h1><h2 id="Android-的权限机制"><a href="#Android-的权限机制" class="headerlink" title="Android 的权限机制"></a>Android 的权限机制</h2><p>每个危险权限都属于一个权限组，我们在进行运行时权限处理时使用的是权限名，但是用户一旦同意授权了，那么该权限所对应的权限组中所有的其他权限也会同时被授权。</p>
 <h2 id="在程序运行时申请权限"><a href="#在程序运行时申请权限" class="headerlink" title="在程序运行时申请权限"></a>在程序运行时申请权限</h2><p>1、 首先判断用户是不是已经给我们授权了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(ContextCompat.checkSelfPermission(Context, Manifest.permission.权限) != PackageManager.PErMISSION_GRANTED)&#123;</span><br><span class="line">  ActivityCompat.requestPermissions(Context, new String[]&#123;Manifest.permission.权限&#125;, 常量);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  //do something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

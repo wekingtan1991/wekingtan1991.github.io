@@ -391,10 +391,8 @@
 
       
         
-          
-          开发流程声明 BLE 权限在 AndroidManifest 中添加：
-12345&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot; /&gt;&lt;uses-permission android:na
-          ...
+          <h1 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h1><h2 id="声明-BLE-权限"><a href="#声明-BLE-权限" class="headerlink" title="声明 BLE 权限"></a>声明 BLE 权限</h2><p>在 AndroidManifest 中添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH_ADMIN&quot; /&gt;</span><br><span class="line">&lt;!-- 6.0 之后需要位置权限--&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot; /&gt;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/05/BLE 开发知识/#more" rel="contents">
@@ -544,13 +542,9 @@
 
       
         
-          
-          基础功能
-显示步数、距离、卡路里、电量、目标完成状况
-
-功能实现过程
-通过手机蓝牙与手环连接，手机 APP 发送个人设置数据给手环；当手环接收数据成功后，更新用户信息，同时返回当前时刻到上一次同步数据时刻的数据（注：数据以1小时为单位，返回的每个1小时数据是每个1小时的累计数据)，这次返回的数据中含
-          ...
+          <h1 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h1><ul>
+<li>显示步数、距离、卡路里、电量、目标完成状况</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/05/手环开发总结/#more" rel="contents">
@@ -702,15 +696,7 @@
         
           
           
-Android Asset Studio
-
-Material Palette
-
-easyicon
-
-
-
-          
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/05/ICON 资源网站/#more" rel="contents">
@@ -872,10 +858,7 @@ easyicon
       
         
           
-          MPAndroidChart
-开始本章介绍使用此库的基本设置。
-添加依赖作为第一步，将该库的依赖项添加到您的项目中。 如何添加依赖已经在此存储库的用法部分中进行了介绍。 推荐使用 Gradle 方式作为添加依赖的方式。
-创建界面使用 LineChart, BarChart, ScatterChart
+          
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1026,10 +1009,9 @@ easyicon
 
       
         
-          
-          JSONObject 及 JSONArray 取值String 转 JSONObject 或 JSONArrayJSONArray jsonArray = JSONArray.fromObject(str);
-JSONObject jsonObject = JSONObject.fromObject
-          ...
+          <h2 id="JSONObject-及-JSONArray-取值"><a href="#JSONObject-及-JSONArray-取值" class="headerlink" title="JSONObject 及 JSONArray 取值"></a>JSONObject 及 JSONArray 取值</h2><h3 id="String-转-JSONObject-或-JSONArray"><a href="#String-转-JSONObject-或-JSONArray" class="headerlink" title="String 转 JSONObject 或 JSONArray"></a>String 转 JSONObject 或 JSONArray</h3><pre><code>JSONArray jsonArray = JSONArray.fromObject(str);
+JSONObject jsonObject = JSONObject.fromObject(str);
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/26/JSON 数据解析/#more" rel="contents">
