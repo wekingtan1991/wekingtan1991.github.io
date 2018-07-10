@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Github 总结]]></title>
+    <url>%2F2018%2F07%2F10%2FGithub%20%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[安装在 Windows 系统 在Windows上使用 Git，可以从 Git 官网直接下载安装程序]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[异常捕获代码]]></title>
     <url>%2F2018%2F07%2F06%2F%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%BB%A3%E7%A0%81%2F</url>
     <content type="text"></content>
