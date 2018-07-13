@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android 屏幕适配]]></title>
+    <url>%2F2018%2F07%2F13%2F%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>屏幕适配</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[线程池]]></title>
+    <url>%2F2018%2F07%2F13%2F%E7%BA%BF%E7%A8%8B%E6%B1%A0%2F</url>
+    <content type="text"><![CDATA[Android 中常见的4种线程池（保证你能看懂并理解]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>线程池</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[混合开发]]></title>
+    <url>%2F2018%2F07%2F13%2F%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Hybrid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[App 设计]]></title>
+    <url>%2F2018%2F07%2F13%2FApp%20%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[Android 中 vector 用法详解 Android UI：使用矢量图，抛弃PNG 码农如何从零开始做出有设计感的app？]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>设计</tag>
+        <tag>Vector Assert</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Dagger2]]></title>
     <url>%2F2018%2F07%2F11%2FDagger2%2F</url>
     <content type="text"><![CDATA[A fast dependency injector for Android and Java. 添加依赖只要在 app module 的 build.gradle，添加： 123456dependencies &#123; ……………… //dagger2 implementation &apos;com.google.dagger:dagger:版本号&apos; annotationProcessor &apos;com.google.dagger:dagger-compiler:版本号&apos;&#125; 开始新建一个无参数的类123456public class Person &#123; public Person() &#123; System.out.println("a person created"); &#125;&#125; 新建一个该类的提供者123456789@Modulepublic class MainModule &#123; @Provides Person providesPerson()&#123; System.out.println("a person created from MainModule"); return new Person(); &#125;&#125; @Module 标注的对象，你可以把它想象成一个工厂，可以向外提供一些类的对象。那么到底提供什么对象呢？ @Provides 标注的方法就是提供对象的，这种方法一般会返回一个对象实例，例如上面返回一个 Person 对象。 新建一个 component 容器12345@Component(modules = &#123;MainModule.class&#125;)public interface MainComponent &#123; void inject(MainActivity mainActivity);&#125; 可以把它想成一个容器， module 中产出的东西都放在里面，然后将 component 与我要注入的 MainActivity 做关联，MainActivity 中需要的 person 就可以从 component 中去取出来。 @Component 表示这个接口是一个容器，并且与 MainModule.class 关联，它生产的东西都在这里。 void inject(MainActivity mainActivity); 表示我怎么和要注入的类关联。这个比较抽象！ 在 MainActivity 中将 component 关联进去123456789101112131415public class MainActivity extends AppCompatActivity &#123; @Inject Person person; @Override protected void onCreate(Bundle savedInstanceState) &#123; super.onCreate(savedInstanceState); setContentView(R.layout.activity_main); MainComponent component = DaggerMainComponent.builder() .mainModule(new MainModule()).build(); component.inject(this); &#125;&#125; @Inject 在 Person 对象上添加一个 @Inject 注解，即可自动注入对象。这个时候系统看到有一个 @Inject 修饰的 Person，就知道在这个 MainComponent 中去找，并且是有 MainModule 的 Provides 修饰的方法提供的。 完成以上步骤，开始重建我们的项目DaggerMainComponent 就是你 build project 的时候，dagger 自己为你生成的具体的 component 类（我们自己定义的是 MainComponent 接口）。 其他注解和情况单例模式 @Singleton（基于Component）基于 Component 的单例模式， 就是在这个 Component 对象中，一个对象是单例对象。如果又新创建了一个Component，那么两个 Component 中的对象是不一样的。 我们再在 MainActivity 中添加一个12@InejctPerson person2 并打印两个 person 对象，发现 person 会被创建两次，并且两个 person 对象也不同。如果我们希望只有一个 person 和 person2，并且都指向同一个 Person 对象，就要使用 @Singleton 注解。 在 MainModule.java 的 provides 方法上需要添加 @Singleton 注解12345678910@Modulepublic class MainModule &#123; @Singleton @Provides Person providesPerson()&#123; System.out.println("a person created from MainModule"); return new Person(); &#125;&#125; 在 MainComponent.java 类上添加 @Singleton 注解123456@Singleton@Component(modules = &#123;MainModule.class&#125;)public interface MainComponent &#123; void inject(MainActivity mainActivity);&#125; 再运行，发现 person 只创建了一次，并且两个 person 指向同一个对象。 需要注意的是：单例是基于 Component 的，所以不仅 Provides 的地方要加 @Singleton，Component 上也需要加。并且如果有另外一个 OtherActivity，并且创建了一个 MainComponent，也注入 Person，这个时候 MainActivity 和 OtherActivity 中的 Person 是不构成单例的，因为它们的 Component 是不同的。 带有参数的依赖对象如果构造 Person 类，需要一个参数 Context，我们怎么注入呢？ 要知道注入的时候我们只有一个 @Inject 注解，并不能带参数。所以我们需要再 MainModule 中提供 context，并且由 providesXXX 函数自己去构造。 新建一个带参数的类123456789public class Person &#123; private static final String TAG = "Person"; private Context context; public Person(Context context)&#123; Log.d(TAG, "我是一个带参数的男人" + context); &#125;&#125; 修改该类的提供者12345678910111213141516171819202122@Modulepublic class MainModule &#123; private static final String TAG = "MainModule"; private Context context; public MainModule(Context context)&#123; this.context = context; &#125; @Provides public Context providesContext()&#123; return this.context; &#125; @Singleton @Provides public Person providesPerson(Context context)&#123; Log.d(TAG, "person from module "); return new Person(context); &#125;&#125; providesPerson(Context context) 中的 context 不能直接使用成员变量 this.context，而是要在本类中提供一个1234@Providespublic Context providesContext()&#123; return this.context;&#125; 方法，这样在发现需要 context 的时候会调用 provideContext 来获取，这也是为了解耦。 依赖一个组件自定义标记 @Qualifier 和 ＠Named@Named(“…”)@Qualifier自定义标签懒加载Lazy和强制重新加载Provider@Scope 自定义生命周期参考google/daggerDagger2入门]]></content>
@@ -35,18 +84,6 @@
         <tag>Android</tag>
         <tag>旅游</tag>
         <tag>记账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Github 总结]]></title>
-    <url>%2F2018%2F07%2F10%2FGithub%20%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
