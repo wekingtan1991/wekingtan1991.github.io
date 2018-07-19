@@ -14,7 +14,7 @@
     
     
     
-    <title>你好，我叫weking</title>
+    <title>你好，我叫weking | 我不怕千万人阻挡，只怕自己会投降</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -124,7 +124,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -143,7 +143,7 @@
         <h1 class="title">你好，我叫weking</h1>
         <h5 class="subtitle">
             
-                
+                我不怕千万人阻挡，只怕自己会投降
             
         </h5>
     </div>
@@ -156,6 +156,166 @@
 <div class="container body-wrap">
 
     <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-内存优化与内存泄露"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-19 11:25:53" datetime="2018-07-19T03:25:53.000Z"  itemprop="datePublished">2018-07-19</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/19/内存优化与内存泄露/">内存优化与内存泄露</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。
+
+多数出现在不合理的编码情况下，Android 中常见就是 Activity 被引用，但在调用 finish 之后却没有释放，第二次打开 activity又重新创建，这样的内存泄漏不断的发生，则会导致内存的溢出。 
+比如在 Activity 中注册了一个广播接收器，但是在页面关闭的时候没有进行unRegister，就会出现内存溢出的现象。通常情况下，大量的内存泄漏会造成 OOM。
+
+OOM（内存溢出）即 Out Of Memoery，顾名思义就是指内存溢出了。
+Android 的每个应用程序都会使用一个专有的 Dalvik 虚拟机实例来运行，它是由 Zygote 服务进程孵化出来的，也就是说每个应用程序都是在属于自己的进程中运行的。 Android 为不同类型的进程分配了不同的内存使用上限 。
+APP 向系统申请超过最大阀值的内存请求，但系统不会再分配多余的空间，就会造成OOM error。在我们 Android 平台下，多数情况是出现在图片不当处理加载的时候。  
+    
+
+        <a href="/2018/07/19/内存优化与内存泄露/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存/">内存</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-事件分发与滑动冲突"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-19 11:25:24" datetime="2018-07-19T03:25:24.000Z"  itemprop="datePublished">2018-07-19</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/19/事件分发与滑动冲突/">事件分发与滑动冲突</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        事件分发机制事件分发过程主要由 dispatchTouchEvent，onInterceptTouchEvent 和 onTouchEvent 三个方法共同完成：
+
+public boolean dispatchTouchEvent(MotionEvent ev)
+
+用来进行事件分发，如果事件能够传递给当前 view，则此方法一定调用，返回结果受当前 view 的 onTouchEvent 和下级 view 的 dispatchTouchEvent 方法影响，表示是否消耗了当前事件。
+
+public boolean onInterceptTouchEvent(MotionEvent event)
+
+在 dispatchTouchEvent 内部调用，用来判断是否拦截某个事件。
+
+public boolean onTouchEvent(MotionEvent event)
+
+在 dispatchTouchEvent 内部调用，用来处理点击事件，返回结果表示是否消耗了当前事件，如果不消耗则在同一事件序列中，当前 view 无法再次接受到事件。
+    
+
+        <a href="/2018/07/19/事件分发与滑动冲突/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件/">事件</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-热修复和增量更新"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-19 11:24:54" datetime="2018-07-19T03:24:54.000Z"  itemprop="datePublished">2018-07-19</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/19/热修复和增量更新/">热修复和增量更新</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+    
+
+        <a href="/2018/07/19/热修复和增量更新/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/增量更新/">增量更新</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/热修复/">热修复</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
     
         <li class="post-list-item fade">
             <article id="post-Java 基础"
@@ -190,7 +350,7 @@
     
 
         <a href="/2018/07/15/Java 基础/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -237,7 +397,7 @@
     
 
         <a href="/2018/07/13/屏幕适配/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -285,7 +445,7 @@
     
 
         <a href="/2018/07/13/线程池/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -332,7 +492,7 @@
     
 
         <a href="/2018/07/13/混合开发/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -382,7 +542,7 @@ Android UI：使用矢量图，抛弃PNG
     
 
         <a href="/2018/07/13/App 设计/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -429,7 +589,7 @@ Android UI：使用矢量图，抛弃PNG
     
 
         <a href="/2018/07/11/Dagger2/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -476,152 +636,13 @@ Android UI：使用矢量图，抛弃PNG
     
 
         <a href="/2018/07/11/ButterKnife/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ButterKnife/">ButterKnife</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-旅游记账助手"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-11 08:31:58" datetime="2018-07-11T00:31:58.000Z"  itemprop="datePublished">2018-07-11</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/11/旅游记账助手/">旅游记账助手</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        功能记账（AA 制）
-旅游攻略
-景点导航
-相机
-紧急电话
-注意事项分享提醒（护照、衣物、登机牌…………）
-
-    
-
-        <a href="/2018/07/11/旅游记账助手/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅游/">旅游</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/记账/">记账</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-异常捕获代码"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-06 13:48:15" datetime="2018-07-06T05:48:15.000Z"  itemprop="datePublished">2018-07-06</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/06/异常捕获代码/">异常捕获代码</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-    
-
-        <a href="/2018/07/06/异常捕获代码/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-ContentProvider 内容提供器"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-06 13:26:27" datetime="2018-07-06T05:26:27.000Z"  itemprop="datePublished">2018-07-06</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/06/ContentProvider 内容提供器/">Content Provider 内容提供器</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        定义内容提供器主要用于在不同的应用程序之间实现数据共享功能，是 Android 实现跨程序共享数据的标准方式。
-    
-
-        <a href="/2018/07/06/ContentProvider 内容提供器/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内容提供器/">内容提供器</a></li></ul>
 
     </div>
     
@@ -658,7 +679,7 @@ Android UI：使用矢量图，抛弃PNG
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">

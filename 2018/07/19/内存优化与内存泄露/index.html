@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>内存优化与内存泄露 | 你好，我叫weking | 我不怕千万人阻挡，只怕自己会投降</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,内存">
+    <meta name="description" content="概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。  多数出现在不合理的编码情况下，Android 中常见就是 Activity 被引用，但在调用 finish 之后却没有释放，第二次打开 activity又重新创建，这样的内存泄漏不断的发生，则会导致内存的溢出。  比如在 Activity 中注册了一个广播接收器，但是在">
+<meta name="keywords" content="Android,内存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存优化与内存泄露">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/内存优化与内存泄露/index.html">
+<meta property="og:site_name" content="你好，我叫weking">
+<meta property="og:description" content="概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。  多数出现在不合理的编码情况下，Android 中常见就是 Activity 被引用，但在调用 finish 之后却没有释放，第二次打开 activity又重新创建，这样的内存泄漏不断的发生，则会导致内存的溢出。  比如在 Activity 中注册了一个广播接收器，但是在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-19T16:14:59.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="内存优化与内存泄露">
+<meta name="twitter:description" content="概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。  多数出现在不合理的编码情况下，Android 中常见就是 Activity 被引用，但在调用 finish 之后却没有释放，第二次打开 activity又重新创建，这样的内存泄漏不断的发生，则会导致内存的溢出。  比如在 Activity 中注册了一个广播接收器，但是在">
+    
+        <link rel="alternate" type="application/atom+xml" title="你好，我叫weking" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/husky.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wekingtan</h5>
+          <a href="mailto:wekingtan@foxmail.com" title="wekingtan@foxmail.com" class="mail">wekingtan@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                归类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wekingtan1991" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/friendlink"  >
+                <i class="icon icon-lg icon-heart"></i>
+                链接
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">内存优化与内存泄露</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">内存优化与内存泄露</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-19T03:25:53.000Z" itemprop="datePublished" class="page-time">
+  2018-07-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存泄漏"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">内存泄漏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OOM（内存溢出）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">OOM（内存溢出）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-内存管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">Android 内存管理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-内存优化的关键点"><span class="post-toc-number">3.</span> <span class="post-toc-text">Android 内存优化的关键点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#万恶的-static"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">万恶的 static</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无关引用"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">无关引用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#善用-SoftReference-WeakReference-LruCache"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">善用 SoftReference/WeakReference/LruCache</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#谨慎-handler"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">谨慎 handler</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Bitmap终极杀手"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Bitmap终极杀手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Cursor-和-I-O-流及时关闭"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">Cursor 和 I/O 流及时关闭</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ListView-和-GridView-的-item-缓存"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">ListView 和 GridView 的 item 缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面背景和图片加载"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">页面背景和图片加载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BroadCastReceiver、Service"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">BroadCastReceiver、Service</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#String-StringBuffer"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">String/StringBuffer</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android内存分配回收机制"><span class="post-toc-number">4.</span> <span class="post-toc-text">Android内存分配回收机制</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-内存优化与内存泄露"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">内存优化与内存泄露</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-19 11:25:53" datetime="2018-07-19T03:25:53.000Z"  itemprop="datePublished">2018-07-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。</p>
+<ul>
+<li>多数出现在不合理的编码情况下，Android 中常见就是 Activity 被引用，但在调用 finish 之后却没有释放，第二次打开 activity又重新创建，这样的内存泄漏不断的发生，则会导致内存的溢出。 </li>
+<li>比如在 Activity 中注册了一个广播接收器，但是在页面关闭的时候没有进行unRegister，就会出现内存溢出的现象。通常情况下，大量的内存泄漏会造成 OOM。</li>
+</ul>
+<h2 id="OOM（内存溢出）"><a href="#OOM（内存溢出）" class="headerlink" title="OOM（内存溢出）"></a>OOM（内存溢出）</h2><p>即 Out Of Memoery，顾名思义就是指内存溢出了。</p>
+<p>Android 的每个应用程序都会使用一个专有的 Dalvik 虚拟机实例来运行，它是由 Zygote 服务进程孵化出来的，也就是说每个应用程序都是在属于自己的进程中运行的。 Android 为不同类型的进程分配了不同的内存使用上限 。</p>
+<p>APP 向系统申请超过最大阀值的内存请求，但系统不会再分配多余的空间，就会造成OOM error。在我们 Android 平台下，多数情况是出现在图片不当处理加载的时候。  </p>
+<a id="more"></a>
+<h1 id="Android-内存管理"><a href="#Android-内存管理" class="headerlink" title="Android 内存管理"></a>Android 内存管理</h1><p>Android 应用层是由 java 开发的，Android 的 davlik 虚拟机与 jvm 也类似，只不过它是<code>基于寄存器</code>的。</p>
+<p>在 java 中，通过 new 为对象分配内存，所有对象在 java 堆内分配空间；而内存的释放是由垃圾收集器（GC）来回收的。 </p>
+<p>Java采用了有向图的原理。Java 将引用关系考虑为图的有向边，有向边从引用者指向引用对象。</p>
+<p>线程对象可以作为有向图的起始顶点，该图就是从起始顶点(GC roots)开始的一棵树，根顶点可以到达的对象都是有效对象，GC 不会回收这些对象。如果某个对象 (连通子图)与这个根顶点不可达(注意，该图为有向图)，那么我们认为这个(这些)对象不再被引用，可以被 GC 回收。  </p>
+<h1 id="Android-内存优化的关键点"><a href="#Android-内存优化的关键点" class="headerlink" title="Android 内存优化的关键点"></a>Android 内存优化的关键点</h1><h2 id="万恶的-static"><a href="#万恶的-static" class="headerlink" title="万恶的 static"></a>万恶的 static</h2><p>由于 static 声明变量的生命周期其实是和 APP 的生命周期一 样的，有点类似于 Application<strong>。</strong>如果大量使用的话，就会占据内存空间不释放，积少成多也会造成内存的不断开销，直至挂掉。</p>
+<p>static 的合理使用一般用来修饰基本数据类型或者轻量级对象，尽量避免修饰集合或者大对象，常用作修饰全局配置项、工具类方法、内部类。</p>
+<h2 id="无关引用"><a href="#无关引用" class="headerlink" title="无关引用"></a>无关引用</h2><p>很多情况下，我们需求用到传递引用，但是我们无法确保引用传递出去后能否及时的回收。</p>
+<p>比较有代表性的 Context 泄漏，很多情况下当 Activity 结束后，由于仍被其他的对象指向导致一直迟迟不能回收，这就造成了内存泄漏。这时可以考虑第三条建议。</p>
+<p>不要让生命周期长于Activity 的对象持有到 Activity 的引用 。</p>
+<h2 id="善用-SoftReference-WeakReference-LruCache"><a href="#善用-SoftReference-WeakReference-LruCache" class="headerlink" title="善用 SoftReference/WeakReference/LruCache"></a>善用 SoftReference/WeakReference/LruCache</h2><p>Java、Android 中有没有这样一种机制呢，当内存吃紧或者 GC 扫过的情况下，就能及时把一些内存占用给释放掉，从而分配给需要分配的地方。答案是肯定的，java 为我们提供了两个解决方案：</p>
+<ul>
+<li>如果对内存的开销比较关注的 APP，可以考虑使用 WeakReference，当 GC 回收扫过这块内存区域时就会回收；如果不是那么关注的话，可以使用 SoftReference，它会在内存申请不足的情况下自动释放，同样也能解决 OOM 问题；</li>
+<li>Android 自 3.0 以后也推出了 LruCache 类，使用 LRU 算法释放内存，一样的能解决 OOM，如果兼容 3.0 以下的版本，请导入 v4 包。关于 第二条的无关引用的问题，我们传参可以考虑使用 WeakReference 包装一下。</li>
+</ul>
+<h2 id="谨慎-handler"><a href="#谨慎-handler" class="headerlink" title="谨慎 handler"></a>谨慎 handler</h2><p>在处理异步操作的时候，handler + thread 是个不错的选择。但是相信在使用 handler 的时候，大家都会遇到警告的情形，这个就是 lint 为开发者的提醒。handler 运行于 UI 线程，不断处理来自 MessageQueue 的消息，如果 handler 还有消息需要处理但是 Activity 页面已经结束的情况下，Activity 的引用其实并不会被回收，这就造成了内存泄漏。解决方案有 2 种：</p>
+<ul>
+<li><p>在 Activity 的 onDestroy 方法中调用 <code>handler.removeCallbacksAndMessages(null);</code> 取消所有的消息的处理，包括待处理的消息；</p>
+</li>
+<li><p>声明handler的内部类为static。</p>
+</li>
+</ul>
+<h2 id="Bitmap终极杀手"><a href="#Bitmap终极杀手" class="headerlink" title="Bitmap终极杀手"></a>Bitmap终极杀手</h2><p>Bitmap 的不当处理极可能造成 OOM，绝大多数情况都是因这个原因出现的。Bitamp 位图是 Android 中当之无愧的胖小子，所以在操作的时候当然是十分的小心了。由于 Dalivk 并不会主动的去回收，需要开发者在 Bitmap 不被使用的时候 recycle 掉。使用的过程中，及时释放是非常重要 的。同时如果需求允许，也可以去 BItmap 进行一定的缩放，通过 <code>BitmapFactory.Options</code> 的 <code>inSampleSize</code> 属性进行控制。 </p>
+<p>如果仅仅只想获得 Bitmap 的属性，其实并不需要根据 BItmap 的像素去分配内存，只需在解析读取 Bmp 的时候使用 <code>BitmapFactory.Options</code> 的 <code>inJustDecodeBounds</code> 属性。</p>
+<p>最后建议大家在加载网络图片的时候，使用软引用或者弱引用并进行本地缓存，推荐使用 <code>android-universal-imageloader</code> 或者 <code>xUtils</code>，牛人出品，必属精品。</p>
+<h2 id="Cursor-和-I-O-流及时关闭"><a href="#Cursor-和-I-O-流及时关闭" class="headerlink" title="Cursor 和 I/O 流及时关闭"></a>Cursor 和 I/O 流及时关闭</h2><p>在查询 SQLite 数据库时，会返回一个 Cursor，当查询完毕后，及时关闭，这样就可以把查询的结果集及时给回收掉。</p>
+<p>I/O 流操作完毕，读写结束，记得关闭。</p>
+<h2 id="ListView-和-GridView-的-item-缓存"><a href="#ListView-和-GridView-的-item-缓存" class="headerlink" title="ListView 和 GridView 的 item 缓存"></a>ListView 和 GridView 的 item 缓存</h2><p>对于移动设备，尤其硬件参差不齐的 Android 生态，页面的绘制其实是很耗时的，findViewById 也是蛮慢的。所以不重用 View，在有列表的时候就尤为显著了，经常会出现滑动很卡的现象。</p>
+<h2 id="页面背景和图片加载"><a href="#页面背景和图片加载" class="headerlink" title="页面背景和图片加载"></a>页面背景和图片加载</h2><p>在布局和代码中设置背景和图片的时候，如果是纯色，尽量使用 color；如果是规则图形，尽量使用 shape 画图；如果稍微复杂点，可以使用 9patch 图；如果不能使用 9patch 的情况下，针对几种主流分辨率的机型进行切图。</p>
+<h2 id="BroadCastReceiver、Service"><a href="#BroadCastReceiver、Service" class="headerlink" title="BroadCastReceiver、Service"></a>BroadCastReceiver、Service</h2><p>绑定广播和服务，一定要记得在不需要的时候给解绑。</p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程不再需要继续执行的时候要记得及时关闭，开启线程数量不易过多，一般和自己机器内核数一样最好，推荐开启线程的时候，使用<code>线程池</code>。</p>
+<h2 id="String-StringBuffer"><a href="#String-StringBuffer" class="headerlink" title="String/StringBuffer"></a>String/StringBuffer</h2><p>当有较多的字符创需要拼接的时候，推荐使用 StringBuffer。</p>
+<h1 id="Android内存分配回收机制"><a href="#Android内存分配回收机制" class="headerlink" title="Android内存分配回收机制"></a>Android内存分配回收机制</h1><p>从宏观角度上来看Android系统可以分为三个层次</p>
+<ul>
+<li>Application Framework,</li>
+<li>Dalvik 虚拟机</li>
+<li>Linux内核。</li>
+</ul>
+<p>这三个层次都有各自内存相关工作：</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg%3D%3D&amp;mid=2653578816&amp;idx=1&amp;sn=20b6160e92167dde676561f3a43d0860&amp;scene=45#wechat_redirect" target="_blank" rel="noopener">Android 内存优化总结&amp;实践</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2018-07-19T16:14:59.708Z" itemprop="dateUpdated">2018-07-20 00:14:59</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/husky.jpg" alt="wekingtan">
+            wekingtan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存/">内存</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&title=《内存优化与内存泄露》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&title=《内存优化与内存泄露》 — 你好，我叫weking&source=概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。
+
+多数出现在不合理的编码情..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/19/内存优化与内存泄露/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《内存优化与内存泄露》 — 你好，我叫weking&url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/19/事件分发与滑动冲突/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">事件分发与滑动冲突</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大佬
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wekingtan &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&title=《内存优化与内存泄露》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&title=《内存优化与内存泄露》 — 你好，我叫weking&source=概念内存泄漏对象在内存 heap 堆中分配的空间，当不再使用或没有引用指向的情况下，仍不能被垃圾收集器 GC 正常回收的情况。
+
+多数出现在不合理的编码情..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/19/内存优化与内存泄露/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《内存优化与内存泄露》 — 你好，我叫weking&url=http://yoursite.com/2018/07/19/内存优化与内存泄露/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/19/内存优化与内存泄露/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQXLDMAgF0Nz/0ukBWjkfcDpj6XnVSdyIpwUjBK9X/Lx/Pat3Vu+vvl2t8vrGg4GB8VjG+/LpvZNvxHxdDAyMcxhJAk3Sa/7L16HnsWFgYGDkpOuAVuDr7cDAwMC4i5FXl0lAGBgYGJMiNr9Wuy44rzfi67U4BgbGAxl50vz/v7/S38DAwHgU4118koSYJ+heDH+siIGBsTUjT3CTQCdJvFAYY2BgbM3opcJJ2TlpJGBgYGBUq8V7i+G8SbBcHQMDYzvGpHxNEm7SqsxHN5a/hoGBsTWjOuJQTY55KNURtGhyBAMDYwtG9UCWF73VT0aNTAwMjGMY+WEumXOolsfVdZcJFwMD4wBGHlb1aiy5pMubB82ZEQwMjMcyvndkzN+ptjOjaREMDIyNGNVBit5wxmSk7EPSx8DAOIbRu9fqpdd5k2CZcDEwMLZmzEcukq2563DZvG7DwMDYjjEf4aoeB5PU/2HYAgMDYztGoU1YvMTvXbdVk/KrFy4GBsYDGb0WYzUdF3a0t8UYGBjHMPIhrXwYotmYLJbHGBgYJzB6oxL5Ya5Xshb+FwMDY1PGpDGQf1s99pWLWwwMjK0Z82SXNAMmV2k3hI6BgbEFozpgkV+u5eVrb8swMDBOY0wSX7WdkGxKNVoMDAyMSdugPDbR+hwDAwMjSbKT5uXkSg4DA+McRn7dn5Ss1bblfJswMDD2ZvRKx+owa3JwrHYzMDAwDmD8AIqr2xlqWVzRAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

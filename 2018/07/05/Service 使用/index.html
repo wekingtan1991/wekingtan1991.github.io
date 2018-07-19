@@ -14,7 +14,7 @@
     
     
     
-    <title>Service 使用 | 你好，我叫weking</title>
+    <title>Service 使用 | 你好，我叫weking | 我不怕千万人阻挡，只怕自己会投降</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="你好，我叫weking">
 <meta property="og:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-08T01:10:03.384Z">
+<meta property="og:updated_time" content="2018-07-19T03:28:18.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Service 使用">
 <meta name="twitter:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
@@ -126,7 +126,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -223,14 +223,10 @@
 <li>Result ：当任务执行完毕后，如果需要对结果进行返回，则使用这里指定的泛型作为返回值类型。</li>
 </ul>
 <h3 id="AsyncTask-几个方法："><a href="#AsyncTask-几个方法：" class="headerlink" title="AsyncTask 几个方法："></a>AsyncTask 几个方法：</h3><ul>
-<li><p>onPreExecute() ：<br>这个方法会在<code>后台任务开始执行之前调用</code>，用于进行一些界面上的初始化操作，比如显示一个进度条对话框。</p>
-</li>
-<li><p>doInBackground(Params…) :<br>1、 所有代码都会在子线程中运行；<br>2、 任务一旦完成就会返回 return 语句，但如果 AsyncTask 第三个泛型参数为 Void，则不返回任务执行结果；<br>3、 这个方法中不可以执行 UI 操作，如果要执行 UI 操作，则可以调用 publishProgress(Progress…) 方法完成；</p>
-</li>
-<li><p>onProgressUpdate(Progress…) ：<br>当后台任务中调用 publishProgress(Progress…) 方法后，onProgressUpdate(Progress…) 方法就会调用。</p>
-</li>
-<li><p>onPostExcute(Result) ：<br>当<code>后台任务执行完毕</code>并通过 return 语句执行返回时，这个方法就会调用。</p>
-</li>
+<li>onPreExecute() ：<br>这个方法会在<code>后台任务开始执行之前调用</code>，用于进行一些界面上的初始化操作，比如显示一个进度条对话框。</li>
+<li>doInBackground(Params…) :<br>1、 所有代码都会在子线程中运行；<br>2、 任务一旦完成就会返回 return 语句，但如果 AsyncTask 第三个泛型参数为 Void，则不返回任务执行结果；<br>3、 这个方法中不可以执行 UI 操作，如果要执行 UI 操作，则可以调用 publishProgress(Progress…) 方法完成；</li>
+<li>onProgressUpdate(Progress…) ：<br>当后台任务中调用 publishProgress(Progress…) 方法后，onProgressUpdate(Progress…) 方法就会调用。</li>
+<li>onPostExcute(Result) ：<br>当<code>后台任务执行完毕</code>并通过 return 语句执行返回时，这个方法就会调用。</li>
 </ul>
 <h3 id="AsyncTask-总结"><a href="#AsyncTask-总结" class="headerlink" title="AsyncTask 总结"></a>AsyncTask 总结</h3><p>doInBackground(Params…) 执行具体的耗时任务；<br>onProgressUpdate(Progress…) 进行更新 UI；<br>onProgressUpdate(Progress…) 执行任务收尾；</p>
 <p>启动这个任务：<code>new targetTask().execute();</code></p>
@@ -254,7 +250,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-08T01:10:03.384Z" itemprop="dateUpdated">2018-07-08 09:10:03</time>
+    最終更新：<time datetime="2018-07-19T03:28:18.520Z" itemprop="dateUpdated">2018-07-19 11:28:18</time>
 </span><br>
 
 
@@ -415,7 +411,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
