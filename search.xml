@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初探 Retrofit 2.0]]></title>
+    <url>%2F2018%2F07%2F20%2F%E5%88%9D%E6%8E%A2%20Retrofit%202.0%2F</url>
+    <content type="text"><![CDATA[参考这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Retrofit 2.0</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初探 RxJava 2]]></title>
+    <url>%2F2018%2F07%2F20%2F%E5%88%9D%E6%8E%A2%20RxJava%202%2F</url>
+    <content type="text"><![CDATA[参考这可能是最好的RxJava 2.x 教程（完结版） RxJava]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>RxJava</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[友盟练习]]></title>
     <url>%2F2018%2F07%2F20%2F%E5%8F%8B%E7%9B%9F%E7%BB%83%E4%B9%A0%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>友盟</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[内存优化与内存泄露]]></title>
@@ -104,6 +135,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ButterKnife]]></title>
+    <url>%2F2018%2F07%2F11%2FButterKnife%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>ButterKnife</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[旅游记账助手]]></title>
     <url>%2F2018%2F07%2F11%2F%E6%97%85%E6%B8%B8%E8%AE%B0%E8%B4%A6%E5%8A%A9%E6%89%8B%2F</url>
     <content type="text"><![CDATA[功能记账（AA 制） 旅游攻略 景点导航 相机 紧急电话 注意事项分享提醒（护照、衣物、登机牌…………）]]></content>
@@ -114,18 +157,6 @@
         <tag>Android</tag>
         <tag>旅游</tag>
         <tag>记账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ButterKnife]]></title>
-    <url>%2F2018%2F07%2F11%2FButterKnife%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>ButterKnife</tag>
       </tags>
   </entry>
   <entry>

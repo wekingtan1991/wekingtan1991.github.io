@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-20T14:49:12.126Z</updated>
+  <updated>2018-07-20T14:59:02.339Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初探 Retrofit 2.0</title>
+    <link href="http://yoursite.com/2018/07/20/%E5%88%9D%E6%8E%A2%20Retrofit%202.0/"/>
+    <id>http://yoursite.com/2018/07/20/初探 Retrofit 2.0/</id>
+    <published>2018-07-20T14:52:30.000Z</published>
+    <updated>2018-07-20T14:59:02.339Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/carson_ho/article/details/73732076" target="_blank" rel="noopener">这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/carson_ho/article/details/73732076&quot; tar
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Retrofit 2.0" scheme="http://yoursite.com/tags/Retrofit-2-0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初探 RxJava 2</title>
+    <link href="http://yoursite.com/2018/07/20/%E5%88%9D%E6%8E%A2%20RxJava%202/"/>
+    <id>http://yoursite.com/2018/07/20/初探 RxJava 2/</id>
+    <published>2018-07-20T14:52:03.000Z</published>
+    <updated>2018-07-20T14:58:55.424Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.jianshu.com/p/0cd258eecf60" target="_blank" rel="noopener">这可能是最好的RxJava 2.x 教程（完结版）</a></p><p><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/0cd258eecf60&quot; target=&quot;_blank&quot; rel=&quot;
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="RxJava" scheme="http://yoursite.com/tags/RxJava/"/>
+    
+  </entry>
+  
+  <entry>
     <title>友盟练习</title>
     <link href="http://yoursite.com/2018/07/20/%E5%8F%8B%E7%9B%9F%E7%BB%83%E4%B9%A0/"/>
     <id>http://yoursite.com/2018/07/20/友盟练习/</id>
     <published>2018-07-20T14:49:12.000Z</published>
-    <updated>2018-07-20T14:49:12.126Z</updated>
+    <updated>2018-07-20T14:56:38.097Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="友盟" scheme="http://yoursite.com/tags/%E5%8F%8B%E7%9B%9F/"/>
     
   </entry>
   
@@ -245,6 +305,26 @@
   </entry>
   
   <entry>
+    <title>ButterKnife</title>
+    <link href="http://yoursite.com/2018/07/11/ButterKnife/"/>
+    <id>http://yoursite.com/2018/07/11/ButterKnife/</id>
+    <published>2018-07-11T00:31:58.000Z</published>
+    <updated>2018-07-12T01:30:29.905Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="ButterKnife" scheme="http://yoursite.com/tags/ButterKnife/"/>
+    
+  </entry>
+  
+  <entry>
     <title>旅游记账助手</title>
     <link href="http://yoursite.com/2018/07/11/%E6%97%85%E6%B8%B8%E8%AE%B0%E8%B4%A6%E5%8A%A9%E6%89%8B/"/>
     <id>http://yoursite.com/2018/07/11/旅游记账助手/</id>
@@ -275,26 +355,6 @@
       <category term="旅游" scheme="http://yoursite.com/tags/%E6%97%85%E6%B8%B8/"/>
     
       <category term="记账" scheme="http://yoursite.com/tags/%E8%AE%B0%E8%B4%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ButterKnife</title>
-    <link href="http://yoursite.com/2018/07/11/ButterKnife/"/>
-    <id>http://yoursite.com/2018/07/11/ButterKnife/</id>
-    <published>2018-07-11T00:31:58.000Z</published>
-    <updated>2018-07-12T01:30:29.905Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="ButterKnife" scheme="http://yoursite.com/tags/ButterKnife/"/>
     
   </entry>
   
@@ -445,41 +505,6 @@
       <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
       <category term="线程池" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Broadcast 使用</title>
-    <link href="http://yoursite.com/2018/07/05/Broadcast%20%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/05/Broadcast 使用/</id>
-    <published>2018-07-05T05:47:25.000Z</published>
-    <updated>2018-07-07T03:18:41.593Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="广播机制"><a href="#广播机制" class="headerlink" title="广播机制"></a>广播机制</h1><ul><li>标准广播  完全异步执行，所有广播接收器同时接收</li><li>有序广播 同步执行，同一时刻只有一个广播接收器可以接收</li></ul><a id="more"></a><h1 id="接收系统广播"><a href="#接收系统广播" class="headerlink" title="接收系统广播"></a>接收系统广播</h1><h2 id="动态注册监听网络变化"><a href="#动态注册监听网络变化" class="headerlink" title="动态注册监听网络变化"></a>动态注册监听网络变化</h2><p>动态注册的广播接收器可以随意地控制注册和注销，但必须要在程序启动之后才能街道广播。</p><h2 id="静态注册实现开机启动"><a href="#静态注册实现开机启动" class="headerlink" title="静态注册实现开机启动"></a>静态注册实现开机启动</h2><h1 id="发送自定义广播"><a href="#发送自定义广播" class="headerlink" title="发送自定义广播"></a>发送自定义广播</h1><h2 id="发送标准广播"><a href="#发送标准广播" class="headerlink" title="发送标准广播"></a>发送标准广播</h2><h2 id="发送有序广播"><a href="#发送有序广播" class="headerlink" title="发送有序广播"></a>发送有序广播</h2><p>使用 <code>sendOrderBrocast()</code> 发送广播，同时需要在 AndroidManifest 中设置优先级 <code>&lt;intent-filter android:priority= &gt;</code></p><h1 id="使用本地广播"><a href="#使用本地广播" class="headerlink" title="使用本地广播"></a>使用本地广播</h1><p><code>LocalBroadcastManger</code> 来管理广播。<br><code>LocalBroadcastManger localBroadcastmanger = LocalBroadcastManger.getInstance(this);</code> 获取 <code>LocalBroadcastManger</code> 实例。<br><code>localBroadcastmanger.sendBroadcast()</code> 发送广播。<br><code>localBroadcastmanger.registerReceiver()</code> 注册广播。<br><code>localBroadcastmanger.unregisterReceiver()</code> 注销广播。</p><h1 id="利用广播实现强制下线功能"><a href="#利用广播实现强制下线功能" class="headerlink" title="利用广播实现强制下线功能"></a>利用广播实现强制下线功能</h1><ol><li><p>首先定义一个活动回收器 <code>ActivityCollector</code> 类，创建一个列表来管理活动，<code>ActivityCollector</code> 类里面包含添加活动 <code>addActivity</code>、移除活动 <code>removeActivity</code>、结束活动 <code>finishAll</code> 的方法。</p></li><li><p>创建一个 <code>BaseActivity</code> 类作为所有活动的父类，同时复写 <code>onCreate</code> 添加 <code>addActivity</code> 方法；复写 <code>onDestroy</code> 添加 <code>removeActivity</code> 方法；复写 <code>onResume</code> 在里面注册广播；复写 <code>onPause</code> 在里面注销广播；在 <code>ForceOfflineReceiver</code> 的 <code>onReceive</code> 方法里面放入 <code>finishAll</code> 方法。</p></li><li><p>让需要实现强制下线功能的 Activity 继承 <code>BaseActivity</code> 类，同时发送强制下线功能的广播。</p></li></ol><h1 id="利用静态广播实现-APP-开机自动启动"><a href="#利用静态广播实现-APP-开机自动启动" class="headerlink" title="利用静态广播实现 APP 开机自动启动"></a>利用静态广播实现 APP 开机自动启动</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;广播机制&quot;&gt;&lt;a href=&quot;#广播机制&quot; class=&quot;headerlink&quot; title=&quot;广播机制&quot;&gt;&lt;/a&gt;广播机制&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;标准广播  完全异步执行，所有广播接收器同时接收&lt;/li&gt;
-&lt;li&gt;有序广播 同步执行，同一时刻只有一个广播接收器可以接收&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ViewPager使用</title>
-    <link href="http://yoursite.com/2018/07/05/ViewPager%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/05/ViewPager使用/</id>
-    <published>2018-07-05T05:47:02.000Z</published>
-    <updated>2018-07-05T05:47:02.958Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
