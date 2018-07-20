@@ -14,25 +14,25 @@
     
     
     
-    <title>Service 使用 | 你好，我叫weking | 我不怕千万人阻挡，只怕自己会投降</title>
+    <title>Service 和多线程使用 | 你好，我叫weking | 不怕千万人阻挡，最怕自己会投降</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Android,Service,线程">
-    <meta name="description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
-<meta name="keywords" content="Android,Service,线程">
+    <meta name="keywords" content="Android,Service,多线程,线程池">
+    <meta name="description" content="服务的定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
+<meta name="keywords" content="Android,Service,多线程,线程池">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Service 使用">
-<meta property="og:url" content="http://yoursite.com/2018/07/05/Service 使用/index.html">
+<meta property="og:title" content="Service 和多线程使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/Service 和多线程使用/index.html">
 <meta property="og:site_name" content="你好，我叫weking">
-<meta property="og:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
+<meta property="og:description" content="服务的定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-19T03:28:18.520Z">
+<meta property="og:updated_time" content="2018-07-20T03:55:36.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Service 使用">
-<meta name="twitter:description" content="定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
+<meta name="twitter:title" content="Service 和多线程使用">
+<meta name="twitter:description" content="服务的定义 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。  服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。 服务并不会自动开启线程，默认运行在主线程中。">
     
         <link rel="alternate" type="application/atom+xml" title="你好，我叫weking" href="/atom.xml">
     
@@ -120,13 +120,13 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Service 使用</div>
+        <div class="flex-col header-title ellipsis">Service 和多线程使用</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -142,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Service 使用</h1>
+        <h1 class="title">Service 和多线程使用</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-07-05T05:47:42.000Z" itemprop="datePublished" class="page-time">
@@ -167,16 +167,16 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-多线程"><span class="post-toc-number">2.</span> <span class="post-toc-text">Android 多线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程基本用法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">线程基本用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在子线程中更新-UI"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">在子线程中更新 UI</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析异步消息处理机制"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">解析异步消息处理机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Message"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Message</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Handler"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Handler</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MessageQueue"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">MessageQueue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Looper"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">Looper</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-AsyncTask"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">使用 AsyncTask</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-类的-3-个泛型参数："><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">AsyncTask 类的 3 个泛型参数：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-几个方法："><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">AsyncTask 几个方法：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-总结"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">AsyncTask 总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#服务的基本用法"><span class="post-toc-number">3.</span> <span class="post-toc-text">服务的基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义一个服务"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">定义一个服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#活动和服务进行通信"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">活动和服务进行通信</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#服务的更多技巧"><span class="post-toc-number">4.</span> <span class="post-toc-text">服务的更多技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用前台服务"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">使用前台服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-IntentService"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">使用 IntentService</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#服务的定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">服务的定义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-多线程"><span class="post-toc-number">2.</span> <span class="post-toc-text">Android 多线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程基本用法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">线程基本用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在子线程中更新-UI"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">在子线程中更新 UI</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析异步消息处理机制"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">解析异步消息处理机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Message"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Message</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Handler"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Handler</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MessageQueue"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">MessageQueue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Looper"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">Looper</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-AsyncTask"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">使用 AsyncTask</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-类的-3-个泛型参数："><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">AsyncTask 类的 3 个泛型参数：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-几个方法："><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">AsyncTask 几个方法：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask-总结"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">AsyncTask 总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程池"><span class="post-toc-number">3.</span> <span class="post-toc-text">线程池</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#服务的基本用法"><span class="post-toc-number">4.</span> <span class="post-toc-text">服务的基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义一个服务"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">定义一个服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#活动和服务进行通信"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">活动和服务进行通信</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#服务的更多技巧"><span class="post-toc-number">5.</span> <span class="post-toc-text">服务的更多技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用前台服务"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">使用前台服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-IntentService"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用 IntentService</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Service 使用"
+<article id="post-Service 和多线程使用"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Service 使用</h1>
+        <h1 class="post-card-title">Service 和多线程使用</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-07-05 13:47:42" datetime="2018-07-05T05:47:42.000Z"  itemprop="datePublished">2018-07-05</time>
 
@@ -193,7 +193,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
+            <h1 id="服务的定义"><a href="#服务的定义" class="headerlink" title="服务的定义"></a>服务的定义</h1><blockquote>
 <p><code>服务</code>是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些<code>不需要和用户交互而还要求长期运行的任务</code>。</p>
 </blockquote>
 <p>服务的运行不依赖于任何用户界面，即使程序被切换到后台，或者用户打开了另外一个应用程序，服务仍然能够保持正常运行。但服务不是运行在一个独立的进程中，而是依赖于创建服务时所在的应用程序。当应用程序进程被杀死，服务也会被停止运行。</p>
@@ -230,6 +230,7 @@
 </ul>
 <h3 id="AsyncTask-总结"><a href="#AsyncTask-总结" class="headerlink" title="AsyncTask 总结"></a>AsyncTask 总结</h3><p>doInBackground(Params…) 执行具体的耗时任务；<br>onProgressUpdate(Progress…) 进行更新 UI；<br>onProgressUpdate(Progress…) 执行任务收尾；</p>
 <p>启动这个任务：<code>new targetTask().execute();</code></p>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><p>参考 ：<a href="https://blog.csdn.net/seu_calvin/article/details/52415337" target="_blank" rel="noopener">Android 中常见的4种线程池（保证你能看懂并理解</a></p>
 <h1 id="服务的基本用法"><a href="#服务的基本用法" class="headerlink" title="服务的基本用法"></a>服务的基本用法</h1><h2 id="定义一个服务"><a href="#定义一个服务" class="headerlink" title="定义一个服务"></a>定义一个服务</h2><p>创建一个 Service 并在 AndroidManifest 中注册，其中 <code>Exported</code> 属性表示是否允许除了当前程序之外的其他程序访问这个服务，<code>Enabled</code> 属性表示是否启用这个服务。</p>
 <h2 id="活动和服务进行通信"><a href="#活动和服务进行通信" class="headerlink" title="活动和服务进行通信"></a>活动和服务进行通信</h2><ol>
 <li>创建一个子类继承 Service</li>
@@ -250,7 +251,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2018-07-19T03:28:18.520Z" itemprop="dateUpdated">2018-07-19 11:28:18</time>
+    最后更新时间：<time datetime="2018-07-20T03:55:36.789Z" itemprop="dateUpdated">2018-07-20 11:55:36</time>
 </span><br>
 
 
@@ -274,7 +275,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Service/">Service</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Service/">Service</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程池/">线程池</a></li></ul>
 
 
             
@@ -284,7 +285,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/05/Service 使用/&title=《Service 使用》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/05/Service 和多线程使用/&title=《Service 和多线程使用》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,25 +295,25 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/05/Service 使用/&title=《Service 使用》 — 你好，我叫weking&source=定义
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/05/Service 和多线程使用/&title=《Service 和多线程使用》 — 你好，我叫weking&source=服务的定义
 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。
 
-服务的运行不依赖于任何用户界面..." data-title=" QQ">
+服务的运行不依赖于任何用..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/05/Service 使用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/05/Service 和多线程使用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Service 使用》 — 你好，我叫weking&url=http://yoursite.com/2018/07/05/Service 使用/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Service 和多线程使用》 — 你好，我叫weking&url=http://yoursite.com/2018/07/05/Service 和多线程使用/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/05/Service 使用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/05/Service 和多线程使用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -411,7 +412,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -433,7 +434,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/05/Service 使用/&title=《Service 使用》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/05/Service 和多线程使用/&title=《Service 和多线程使用》 — 你好，我叫weking&pic=http://yoursite.com/img/husky.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -443,25 +444,25 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/05/Service 使用/&title=《Service 使用》 — 你好，我叫weking&source=定义
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/05/Service 和多线程使用/&title=《Service 和多线程使用》 — 你好，我叫weking&source=服务的定义
 服务是 Android 中实现程序后台运行的解决方案，它非常适合去执行那些不需要和用户交互而还要求长期运行的任务。
 
-服务的运行不依赖于任何用户界面..." data-title=" QQ">
+服务的运行不依赖于任何用..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/05/Service 使用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/05/Service 和多线程使用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Service 使用》 — 你好，我叫weking&url=http://yoursite.com/2018/07/05/Service 使用/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Service 和多线程使用》 — 你好，我叫weking&url=http://yoursite.com/2018/07/05/Service 和多线程使用/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/05/Service 使用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/05/Service 和多线程使用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -472,7 +473,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aS27DMAwFwNz/0uk2RQv7kVQLWBqtjMAfTRYPIqXXKx7vj/H5y8/r/P7kqcUDAwPjsYz35bie1vWHk/vz7958EQMD4wBGMokkHK+fSsK3+gYMDAyM0avjqJ38ERgYGBjVV+cLyusox8DAwOgVseXCMp5WXvouqMUxMDAeyMi77v9//Sf7GxgYGI9ivIsjeXayWOwNDAyMvRnV5dp88bcqcDEwME5jJG36pHTMwzEplZO/r+DDwMB4LKO3rZgfm6iGbN7y+/YLBgbGAYxemz5JvF72VyMeAwNjb8akaJy36qqTvil3MTAwNmX0onNe3OZfjCIbAwPjAEZ+tKsXoNWSOH/bzU4sBgbGFoxVDbVelz7/ViGCMTAwNmVUtwd6d+abndVQxsDAOIGRP9abXB6m+VISAwMDYxR5xSVjr/FXKGIxMDAezsg3ABJGHsrz90SbsxgYGFsw8qidH4/ID3g1N0QxMDAOYCTbh70DGb1Ct1rWYmBgnMPoReR8AVoN+l/ux8DAOJix6vde063cL8TAwNiakVwnIy9o51sLGBgYJzDexTEvU/MwLW9hYmBgbMpYe1Ri1bmPSdGLgYGxK6MasnkTv7cQzOdQWCBiYGBswZgcgJhsQPaQGBgYGNUlWjKh+XRv4hsDAwMj3iSoFr3LohwDA+MARnVa82cLy74kvjEwMLZmTErHvHDNG3PVdh4GBsbWjC9oewPxdC36DAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aS27DMAwFwN7/0i3QdeU8knYBS6NVkcS2xgUIfvT1Fa/v37X6fLVWv8mvvXlhYGC8llHdyura63uufr/6pEzFwMA4gHEdZJON5kF58tzl5xgYGBitQJmEZgwMDIznGMkdMDAwMO5lJEVsL6WblMSP1OIYGBgvZFQHA//594PzDQwMjJcwvh9YT482/7gKAwNja0YyMuwNJnsDzl5rDwMD4wRGb+iYh878/pMGHAYGxgmM66/zIUE1QPcGn8unY2BgbMqoJmF5athr6uXj0qiIxcDA2IgxSdSuA+IkcbxuwN2cb2JgYLyE0UvvqocteqH8w4vGwMDYlNELhfmgsRdMy8MGDAyMrRnVQWOhe9cKrPlBtA//EwwMjO0YybbyRyab6I0BCkcuMDAwNmIkiV014PaacdVZ5IcMFwMDYyNG9dZJOO616iYvAgMD4wRGnopVS9y8oE1eZTmrxcDA2IhRrXrLza84rFePa2BgYJzA6CVn86J3Al7W4hgYGJsyqhdPtpKH0fw1YWBgnMCojgyr+VgyfpgcI8PAwDiBUW1mJWExCZfNCjsvgzEwMDZiTLaSp4bVwJ0/FwMD4wRGvvIDENUWXj6EKA8yMTAwNmJMgmzekqsmf+VAj4GBcQDjriA7oVZ5N8xjMTAwDmDMh6C3hWwMDAyMYGCQjCF7AAwMDIxeEZukg/MGXOHOGBgYWzOqg4G8rO0d+bq39MXAwHg54wfdJa1jynPdygAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
