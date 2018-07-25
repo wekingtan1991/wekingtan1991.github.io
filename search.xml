@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SQLite 数据库]]></title>
+    <url>%2F2018%2F07%2F24%2FSQLite%20%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[SQLiteOpenHelper该类封装了 SQLite 数据库的创建和升级工作。]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>SQLite</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初探 Retrofit 2.0]]></title>
     <url>%2F2018%2F07%2F20%2F%E5%88%9D%E6%8E%A2%20Retrofit%202.0%2F</url>
     <content type="text"><![CDATA[参考这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）]]></content>
